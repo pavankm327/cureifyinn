@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cureifyinn LLP - Authorized Siemens Innomotics Dealer</title>
+        
+    <style>
+    :root {
+        --primary: #0f6ba8;
+        --primary-dark: #0a4874;
+        --accent: #19c38b;
+        --accent-dark: #129267;
+        --bg-soft: #f3f5fb;
+        --bg-strong: #050816;
+        --text-main: #1c2333;
+        --text-muted: #6b7280;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--text-main);
+        background-color: #050816;
+    }
+
+    /* Global layout helpers */
+    .section-wrapper {
+        position: relative;
+    }
+
+    .section-wrapper::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 110px;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.18), transparent);
+        pointer-events: none;
+    }
+
+    /* Smooth fade / scroll effects */
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+        0%   { transform: translateY(0); }
+        50%  { transform: translateY(-6px); }
+        100% { transform: translateY(0); }
+    }
+
+    @keyframes pulseSoft {
+        0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(25,195,139,0.45); }
+        50%      { transform: scale(1.02); box-shadow: 0 0 0 12px rgba(25,195,139,0); }
+    }
+
+    /* Header */
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background:
+            radial-gradient(circle at 0% 0%, rgba(25,195,139,0.18), transparent 55%),
+            radial-gradient(circle at 100% 0%, rgba(15,107,168,0.35), transparent 55%),
+            linear-gradient(120deg, #050816, #020617 60%, #02040f);
+        border-bottom: 1px solid rgba(148,163,184,0.22);
+        backdrop-filter: blur(14px);
+    }
+
+    .top-bar {
+        border-bottom: 1px solid rgba(148,163,184,0.25);
+        padding: 8px 0;
+        font-size: 0.85rem;
+    }
+
+    .top-bar .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #e5e7eb;
+    }
+
+    .contact-info span {
+        margin-right: 18px;
+    }
+
+    .contact-info i {
+        color: var(--accent);
+        margin-right: 5px;
+    }
+
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 14px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .logo {
+        height: 52px;
+        width: auto;
+        border-radius: 8px;
+        background: radial-gradient(circle at 0 0, rgba(148,163,184,0.3), transparent 55%);
+        padding: 3px;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .logo-container:hover .logo {
+        transform: translateY(-2px) scale(1.03);
+        box-shadow: 0 12px 26px rgba(15,23,42,0.7);
+    }
+
+    .company-name {
+        color: #e5e7eb;
+        font-size: 1.55rem;
+        font-weight: 700;
+        letter-spacing: 0.28em;
+    }
+
+    .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 26px;
+    }
+
+    .nav-menu a {
+        color: #e5e7eb;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        position: relative;
+        padding-bottom: 4px;
+        transition: color 0.25s ease, transform 0.25s ease;
+    }
+
+    .nav-menu a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--accent), var(--primary));
+        box-shadow: 0 0 12px rgba(25,195,139,0.7);
+        transition: width 0.25s ease;
+    }
+
+    .nav-menu a:hover {
+        color: var(--accent);
+        transform: translateY(-1px);
+    }
+
+    .nav-menu a:hover::after {
+        width: 100%;
+    }
+
+    /* Hero Banner with image */
+    .hero-banner {
+        position: relative;
+        min-height: 70vh;
+        color: #f9fafb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 20px 100px;
+        overflow: hidden;
+        isolation: isolate;
+        /* background: url("https://magneticsmag.com/wp-content/uploads/2024/06/Siemens-Innomotics-8-1024x683.jpg") center center/cover  no-repeat; */
+        /* background: url("https://www.globalindustrialsupplies.eu/wp-content/uploads/2023/12/innomotics-motors.jpg") center center/cover no-repeat;         */
+        /* background: url("https://assets.new.siemens.com/siemens/assets/api/uuid:a529316d-cb9d-4ba1-9bc2-73e7a704f19a/width:4320/im2017030450pd_300dpi.jpg") center center/cover no-repeat; */
+        background: url('assets/background/innomotics-product-family-neutral-visual.jpg') center center / cover no-repeat fixed;
+
+        /* background:  
+            radial-gradient(circle at 0% 0%, rgba(15,107,168,0.55), transparent 60%),
+            radial-gradient(circle at 90% 100%, rgba(25,195,139,0.4), transparent 55%),
+            #020617; */
+    }
+
+    .hero-media {
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        overflow: hidden;
+    }
+
+    .hero-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(1.2) contrast(1.1);
+        transform: scale(1.05);
+    }
+
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+            linear-gradient(135deg, rgba(5,8,22,0.92) 0%, rgba(5,8,22,0.75) 40%, rgba(5,8,22,0.92) 100%),
+            radial-gradient(circle at 10% 0%, rgba(25,195,139,0.35), transparent 60%);
+    }
+
+    .hero-content {
+        max-width: 1100px;
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        gap: 60px;
+        align-items: center;
+        animation: fadeUp 0.9s ease-out both;
+    }
+
+    .hero-copy-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 14px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        background: rgba(15,23,42,0.9);
+        border: 1px solid rgba(148,163,184,0.6);
+        color: #e5e7eb;
+        margin-bottom: 14px;
+    }
+
+    .hero-copy-badge span.dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 12px rgba(25,195,139,0.9);
+        animation: pulseSoft 2.2s infinite;
+    }
+
+    .hero-title {
+        font-size: clamp(2.4rem, 4vw, 3rem);
+        line-height: 1.18;
+        margin-bottom: 14px;
+    }
+
+    .hero-title strong {
+        background: linear-gradient(120deg, #f9fafb, #bae6ff, #a7f3d0);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    .hero-subtitle {
+        font-size: 1.05rem;
+        color: #cbd5f5;
+        max-width: 520px;
+        margin-bottom: 26px;
+    }
+
+    .hero-meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-bottom: 32px;
+        font-size: 0.88rem;
+        color: #9ca3af;
+    }
+
+    .hero-meta-chip {
+        padding: 4px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(148,163,184,0.55);
+        background: rgba(15,23,42,0.7);
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 14px 30px;
+        border-radius: 999px;
+        font-size: 0.98rem;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+        box-shadow: 0 14px 30px rgba(15,23,42,0.75);
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, var(--accent), var(--primary));
+        color: #f9fafb;
+        border: 1px solid rgba(15,23,42,0.9);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px) scale(1.01);
+        box-shadow: 0 18px 40px rgba(25,195,139,0.55);
+        background: linear-gradient(135deg, var(--accent-dark), var(--primary-dark));
+    }
+
+    .btn-secondary {
+        background: rgba(15,23,42,0.7);
+        color: #e5e7eb;
+        border: 1px solid rgba(148,163,184,0.7);
+    }
+
+    .btn-secondary:hover {
+        transform: translateY(-2px);
+        background: rgba(15,23,42,0.95);
+        border-color: var(--accent);
+        color: #f9fafb;
+    }
+
+    .hero-side-card {
+        background: radial-gradient(circle at 0 0, rgba(148,163,184,0.45), transparent 60%),
+                    linear-gradient(145deg, #020617, #020617 45%, #030712);
+        border-radius: 22px;
+        padding: 22px 22px 20px;
+        border: 1px solid rgba(148,163,184,0.35);
+        box-shadow:
+            0 26px 60px rgba(0,0,0,0.7),
+            0 0 0 1px rgba(15,23,42,0.9);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-side-card::after {
+        content: "";
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        background: radial-gradient(circle, rgba(25,195,139,0.2), transparent 70%);
+        right: -40px;
+        bottom: -60px;
+        opacity: 0.9;
+        pointer-events: none;
+    }
+
+    .hero-side-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #cbd5f5;
+        border: 1px solid rgba(148,163,184,0.6);
+        background: rgba(15,23,42,0.9);
+        margin-bottom: 14px;
+    }
+
+    .hero-side-chip span.dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: #22c55e;
+        box-shadow: 0 0 10px rgba(34,197,94,0.9);
+    }
+
+    .hero-side-title {
+        font-size: 1.05rem;
+        color: #e5e7eb;
+        margin-bottom: 16px;
+    }
+
+    .hero-side-list {
+        list-style: none;
+        margin-bottom: 18px;
+    }
+
+    .hero-side-list li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.88rem;
+        color: #9ca3af;
+        margin-bottom: 6px;
+    }
+
+    .hero-side-list li span.icon {
+        width: 22px;
+        height: 22px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.82rem;
+        background: rgba(15,23,42,0.9);
+        border: 1px solid rgba(148,163,184,0.5);
+        color: #e5e7eb;
+    }
+
+    .hero-side-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
+        color: #9ca3af;
+        margin-top: 6px;
+    }
+
+    .hero-side-metric {
+        text-align: right;
+    }
+
+    .hero-side-metric span.value {
+        display: block;
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: #e5e7eb;
+    }
+
+    /* Shared container for sections */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 2rem;
+        color: #e5e7eb;
+        margin-bottom: 10px;
+        position: relative;
+        padding-top: 10px;
+    }
+
+    .section-title span.accent {
+        background: linear-gradient(120deg, #a5b4fc, #34d399);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    .section-title-divider {
+        width: 80px;
+        height: 3px;
+        margin: 12px auto 0;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--accent), var(--primary));
+        box-shadow: 0 0 18px rgba(25,195,139,0.75);
+    }
+
+    .section-subtitle {
+        text-align: center;
+        margin-top: 12px;
+        margin-bottom: 40px;
+        font-size: 0.95rem;
+        color: #9ca3af;
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Section backgrounds and separators */
+    .about-section {
+        padding: 80px 0;
+        background:
+            radial-gradient(circle at 0% 0%, rgba(15,107,168,0.18), transparent 60%),
+            radial-gradient(circle at 100% 100%, rgba(15,23,42,0.95), #020617 60%);
+        border-top: 1px solid rgba(148,163,184,0.4);
+        border-bottom: 1px solid rgba(148,163,184,0.18);
+    }
+
+    .product-range-section {
+        padding: 80px 0;
+        background:
+            linear-gradient(180deg, #020617 0%, #020617 35%, #050816 100%);
+        border-top: 1px solid rgba(148,163,184,0.28);
+        border-bottom: 1px solid rgba(148,163,184,0.18);
+    }
+
+    .featured-products {
+        padding: 80px 0;
+        background:
+            radial-gradient(circle at 0% 100%, rgba(25,195,139,0.16), transparent 60%),
+            #020617;
+        border-top: 1px solid rgba(148,163,184,0.26);
+        border-bottom: 1px solid rgba(148,163,184,0.18);
+        text-align: center;
+    }
+    
+
+    .service-areas {
+        padding: 80px 0 90px;
+        background:
+            linear-gradient(180deg, #050816 0%, #020617 60%, #000 100%);
+        border-top: 1px solid rgba(148,163,184,0.3);
+    }
+
+    .about-content {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: 50px;
+        margin-top: 40px;
+        align-items: center;
+        animation: fadeUp 0.9s ease-out both;
+    }
+
+    .about-text h3 {
+        color: #e5e7eb;
+        margin-bottom: 18px;
+        font-size: 1.2rem;
+    }
+
+    .about-text p {
+        font-size: 0.98rem;
+        margin-bottom: 14px;
+        color: #9ca3af;
+        text-align: justify;
+    }
+
+    .about-image {
+        background:
+            radial-gradient(circle at 0 0, rgba(148,163,184,0.45), transparent 60%),
+            linear-gradient(145deg, #020617, #020617 40%, #030712);
+        border-radius: 20px;
+        padding: 28px;
+        box-shadow:
+            0 24px 60px rgba(0,0,0,0.9),
+            0 0 0 1px rgba(15,23,42,0.9);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .about-image::before {
+        content: "";
+        position: absolute;
+        width: 260px;
+        height: 260px;
+        top: -80px;
+        left: -80px;
+        background: radial-gradient(circle, rgba(25,195,139,0.25), transparent 70%);
+        opacity: 0.9;
+    }
+
+    .about-stats {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        position: relative;
+    }
+
+    .stat-box {
+        background: rgba(15,23,42,0.96);
+        padding: 18px 16px;
+        border-radius: 16px;
+        text-align: center;
+        box-shadow:
+            0 15px 35px rgba(0,0,0,0.8),
+            0 0 0 1px rgba(30,64,175,0.7);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        border: 1px solid rgba(148,163,184,0.55);
+    }
+
+    .stat-box:hover {
+        transform: translateY(-4px);
+        box-shadow:
+            0 24px 55px rgba(0,0,0,0.95),
+            0 0 0 1px rgba(56,189,248,0.7);
+        border-color: rgba(56,189,248,0.9);
+    }
+
+    .stat-number {
+        font-size: 1.9rem;
+        color: #e5e7eb;
+        font-weight: 700;
+    }
+
+    .stat-label {
+        color: #9ca3af;
+        margin-top: 6px;
+        font-size: 0.85rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+
+    /* Product Range */
+    .product-range-intro {
+        text-align: center;
+        max-width: 720px;
+        margin: 8px auto 34px;
+        color: #9ca3af;
+        font-size: 0.96rem;
+    }
+
+    .product-categories {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 26px;
+        margin-top: 10px;
+    }
+
+    .category-card {
+        background:
+            radial-gradient(circle at 0 0, rgba(25,195,139,0.24), transparent 55%),
+            linear-gradient(145deg, #020617, #020617 40%, #030712);
+        border-radius: 18px;
+        padding: 24px 18px 22px;
+        text-align: center;
+        border: 1px solid rgba(148,163,184,0.55);
+        box-shadow:
+            0 18px 40px rgba(0,0,0,0.9),
+            0 0 0 1px rgba(15,23,42,0.95);
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+        animation: fadeUp 0.6s ease-out both;
+    }
+
+    .category-card:nth-child(1),
+    .category-card:nth-child(2),
+    .category-card:nth-child(3) { animation-delay: 0.05s; }
+    .category-card:nth-child(4),
+    .category-card:nth-child(5),
+    .category-card:nth-child(6) { animation-delay: 0.12s; }
+    .category-card:nth-child(7),
+    .category-card:nth-child(8),
+    .category-card:nth-child(9) { animation-delay: 0.2s; }
+
+    .category-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(circle at 0 0, rgba(56,189,248,0.22), transparent 55%),
+            radial-gradient(circle at 100% 100%, rgba(25,195,139,0.22), transparent 55%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .category-card:hover {
+        transform: translateY(-8px);
+        box-shadow:
+            0 26px 60px rgba(0,0,0,0.95),
+            0 0 0 1px rgba(56,189,248,0.9);
+        border-color: rgba(56,189,248,0.9);
+    }
+
+    .category-card:hover::before {
+        opacity: 1;
+    }
+
+    .category-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 20px;
+        background: radial-gradient(circle at 30% 0, #e5e7eb, #93c5fd);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+        font-size: 1.8rem;
+        color: #020617;
+        box-shadow:
+            0 16px 30px rgba(15,23,42,0.9),
+            0 0 0 1px rgba(15,23,42,0.9);
+        animation: float 3.2s ease-in-out infinite;
+    }
+
+    .category-card h3 {
+        color: #e5e7eb;
+        margin-bottom: 10px;
+        font-size: 1.05rem;
+    }
+
+    .category-card p {
+        color: #9ca3af;
+        margin-bottom: 16px;
+        font-size: 0.9rem;
+        min-height: 52px;
+    }
+
+    .learn-more {
+        color: #bae6fd;
+        text-decoration: none;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.88rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        transition: gap 0.3s ease, color 0.3s ease;
+    }
+
+    .learn-more:hover {
+        gap: 10px;
+        color: #7dd3fc;
+    }
+
+    /* Featured Products */
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 26px;
+        margin-top: 40px;
+        animation: fadeUp 0.9s ease-out both;
+    }
+
+    .product-card {
+        background:
+            radial-gradient(circle at 0 0, rgba(148,163,184,0.35), transparent 55%),
+            linear-gradient(145deg, #020617, #020617 45%, #030712);
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow:
+            0 20px 50px rgba(0,0,0,0.95),
+            0 0 0 1px rgba(15,23,42,0.95);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        border: 1px solid rgba(148,163,184,0.55);
+        position: relative;
+    }
+
+    .product-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -60%;
+        width: 40%;
+        height: 100%;
+        background: linear-gradient(120deg, rgba(248,250,252,0.16), transparent);
+        transform: skewX(-20deg);
+        transition: transform 0.5s ease;
+        pointer-events: none;
+    }
+
+    .product-card:hover {
+        transform: translateY(-6px);
+        box-shadow:
+            0 28px 70px rgba(0,0,0,1),
+            0 0 0 1px rgba(56,189,248,0.9);
+        border-color: rgba(56,189,248,0.9);
+    }
+
+    .product-card:hover::after {
+        transform: translateX(280%) skewX(-20deg);
+    }
+
+    .product-image {
+        height: 180px;
+        background:
+            linear-gradient(135deg, #020617, #020617),
+            radial-gradient(circle at 0 0, rgba(56,189,248,0.3), transparent 55%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.6rem;
+        color: #bae6fd;
+    }
+
+    .product-info {
+        padding: 18px 18px 20px;
+    }
+
+    .product-info h3 {
+        color: #e5e7eb;
+        margin-bottom: 8px;
+        font-size: 1.02rem;
+    }
+
+    .product-info p {
+        color: #9ca3af;
+        font-size: 0.9rem;
+        margin-bottom: 14px;
+    }
+
+    .view-details {
+        display: inline-block;
+        padding: 9px 18px;
+        background: linear-gradient(135deg, var(--accent), var(--primary));
+        color: #f9fafb;
+        text-decoration: none;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+        box-shadow: 0 14px 30px rgba(15,23,42,0.9);
+    }
+
+    .view-details:hover {
+        background: linear-gradient(135deg, var(--accent-dark), var(--primary-dark));
+        transform: translateY(-2px);
+        box-shadow: 0 18px 38px rgba(25,195,139,0.6);
+    }
+
+    /* Service Areas */
+    .areas-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 26px;
+        margin-top: 40px;
+        animation: fadeUp 0.9s ease-out both;
+    }
+
+    .area-card {
+        background:
+            radial-gradient(circle at 0 0, rgba(25,195,139,0.2), transparent 55%),
+            linear-gradient(145deg, #020617, #020617 40%, #030712);
+        color: #e5e7eb;
+        padding: 26px 22px 24px;
+        border-radius: 18px;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(148,163,184,0.55);
+        box-shadow:
+            0 22px 55px rgba(0,0,0,0.95),
+            0 0 0 1px rgba(15,23,42,0.95);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .area-card::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -40%;
+        width: 220px;
+        height: 220px;
+        background: radial-gradient(circle, rgba(15,107,168,0.38), transparent 70%);
+        opacity: 0.9;
+    }
+
+    .area-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+        position: relative;
+    }
+
+    .area-card p {
+        position: relative;
+        opacity: 0.95;
+        font-size: 0.92rem;
+        color: #cbd5f5;
+    }
+
+    .area-card:hover {
+        transform: translateY(-6px);
+        box-shadow:
+            0 28px 70px rgba(0,0,0,1),
+            0 0 0 1px rgba(56,189,248,0.9);
+        border-color: rgba(56,189,248,0.9);
+    }
+
+    /* Footer */
+    footer {
+        background: #020617;
+        color: #e5e7eb;
+        padding: 60px 20px 22px;
+        margin-top: 0;
+        border-top: 1px solid rgba(148,163,184,0.35);
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 32px;
+    }
+
+    .footer-section h3 {
+        color: #e5e7eb;
+        margin-bottom: 16px;
+        font-size: 1.1rem;
+    }
+
+    .footer-section p {
+        font-size: 0.9rem;
+        color: #9ca3af;
+    }
+
+    .footer-section ul {
+        list-style: none;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        color: #9ca3af;
+    }
+
+    .footer-section ul li a {
+        color: #9ca3af;
+        text-decoration: none;
+        transition: color 0.25s ease;
+    }
+
+    .footer-section ul li a:hover {
+        color: #e5e7eb;
+    }
+
+    .dealership-badge {
+        background:
+            radial-gradient(circle at 0 0, rgba(25,195,139,0.45), transparent 70%),
+            linear-gradient(145deg, #020617, #020617 45%, #030712);
+        padding: 16px 16px 14px;
+        border-radius: 14px;
+        text-align: left;
+        margin-top: 18px;
+        box-shadow:
+            0 18px 40px rgba(0,0,0,0.95),
+            0 0 0 1px rgba(15,23,42,0.95);
+        border: 1px solid rgba(148,163,184,0.6);
+    }
+
+    .dealership-badge h4 {
+        font-size: 0.98rem;
+        margin-bottom: 6px;
+    }
+
+    .dealership-badge p {
+        font-size: 0.85rem;
+        opacity: 0.95;
+        color: #cbd5f5;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 22px;
+        border-top: 1px solid rgba(148,163,184,0.35);
+        color: #6b7280;
+        font-size: 0.8rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+        .hero-content {
+            grid-template-columns: minmax(0,1.1fr) minmax(0, 0.9fr);
+            gap: 40px;
+        }
+
+        .product-categories {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 768px) {
+        nav {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .nav-menu {
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        .top-bar .container {
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-start;
+        }
+
+        .hero-banner {
+            padding: 110px 20px 80px;
+            min-height: auto;
+        }
+
+        .hero-content {
+            grid-template-columns: 1fr;
+        }
+
+        .hero-side-card {
+            order: -1;
+        }
+
+        .hero-title {
+            font-size: 2.1rem;
+        }
+
+        .product-categories {
+            grid-template-columns: 1fr;
+        }
+
+        .about-content {
+            grid-template-columns: 1fr;
+        }
+
+        .about-section,
+        .product-range-section,
+        .featured-products,
+        .service-areas {
+            padding: 64px 0;
+        }
+    }
+</style>
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <span>📞 +91-8123416657</span>
+                    <span>✉️ info@cureifyinn.com</span>
+                </div>
+                <div>
+                    <span>Serving Coastal Karnataka | Mangalore • Udupi • Karwar</span>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="logo-container">
+                <img src="assets/logo/logo.jpg" alt="Cureifyinn LLP Logo" class="logo">
+                <span class="company-name">CUREIFYINN</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Product Range</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="hero-content">
+            <!-- <h1>Authorized Siemens Innomotics Dealer</h1>
+            <p>Delivering world-class industrial motors, drives and motion solutions across Coastal Karnataka</p>
+            <div class="cta-buttons">
+                <a href="{{ route('products') }}" class="btn-primary">Explore Products</a>
+                <a href="{{ route('contact') }}" class="btn-secondary">Get a Quote</a>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 style="color: #fdfdfd; margin-bottom: 20px;">Company Overview</h3>
+                    <p>Cureifyinn LLP is an authorized dealer for <strong>Siemens Innomotics</strong> products serving the coastal Karnataka region (Mangalore, Udupi and Karwar). We deliver industrial motors, drives and motion solutions tailored to manufacturing, process industries, marine, water & wastewater, and infrastructure projects.</p>
+                    <p>Our focus is on reliable supply, fast local support, and engineering-led solutions that reduce downtime and improve energy efficiency.</p>
+                    <a href="{{ route('about') }}" class="btn-primary" style="margin-top: 20px;">Read More</a>
+                </div>
+                <div class="about-image">
+                    <div class="about-stats">
+                        <div class="stat-box">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Service Locations</div>
+                        </div>  
+                        <div class="stat-box">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Support Available</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">OEM Genuine Parts</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">Fast</div>
+                            <div class="stat-label">Local Response</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Range Section -->
+    <section class="product-range-section">
+        <div class="container">
+            <h2 class="section-title">Product Range</h2>
+            <p class="product-range-intro">
+                Comprehensive Siemens Innomotics portfolio for motors, drives and motion solutions, tailored for marine, industrial and infrastructure applications across coastal Karnataka.
+            </p>
+            <div class="product-categories">
+                <!-- Row 1 -->
+                <div class="category-card">
+                    <div class="category-icon">⚙️</div>
+                    <h3>Industrial Motors</h3>
+                    <p>Synchronous and asynchronous motors with IE3/IE4 efficiency classes for diverse applications.</p>
+                    <a href="{{ route('product-range') }}" class="learn-more">Learn More →</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">⚡</div>
+                    <h3>Drives & Converters</h3>
+                    <p>Low and medium-voltage drives for precise motor control and energy optimization.</p>
+                    <a href="{{ route('product-range') }}" class="learn-more">Learn More →</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🔧</div>
+                    <h3>Integrated Solutions</h3>
+                    <p>Motor and drive packages for pumps, fans, conveyors and compressors.</p>
+                    <a href="{{ route('product-range') }}" class="learn-more">Learn More →</a>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="category-card">
+                    <div class="category-icon">🚢</div>
+                    <h3>Marine Solutions</h3>
+                    <p>Marine-duty motors and coastal-environment solutions with enhanced protection.</p>
+                    <a href="{{ route('product-range') }}" class="learn-more">Learn More →</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">💧</div>
+                    <h3>Pump & HVAC Packages</h3>
+                    <p>Optimized motor-drive packages for water, wastewater and HVAC applications.</p>
+                    <a href="{{ route('product-range') }}" class="learn-more">Learn More →</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🏭</div>
+                    <h3>Process Industry Sets</h3>
+                    <p>Solutions for cement, chemical, F&B and other process industries.</p>
+                    <a href="{{ route('product-range') }}" class="learn-more">Learn More →</a>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="category-card">
+                    <div class="category-icon">🧩</div>
+                    <h3>Retrofit Solutions</h3>
+                    <p>Energy-efficient replacements and retrofit kits for existing installations.</p>
+                    <a href="{{ route('product-range') }}" class="learn-more">Learn More →</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🛠️</div>
+                    <h3>Spare Parts</h3>
+                    <p>OEM-certified spare parts, consumables and maintenance kits.</p>
+                    <a href="{{ route('product-range') }}" class="learn-more">Learn More →</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">📦</div>
+                    <h3>Panels & Integration</h3>
+                    <p>Drive panels and integration support for turnkey motion systems.</p>
+                    <a href="{{ route('product-range') }}" class="learn-more">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">⚙️</div>
+                    <div class="product-info">
+                        <h3>SIMOTICS Motors</h3>
+                        <p>High-efficiency industrial motors for demanding applications.</p>
+                        <a href="{{ route('products') }}" class="view-details">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">📊</div>
+                    <div class="product-info">
+                        <h3>SINAMICS Drives</h3>
+                        <p>Variable-speed drives for optimal performance and energy savings.</p>
+                        <a href="{{ route('products') }}" class="view-details">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🔄</div>
+                    <div class="product-info">
+                        <h3>Motion Control</h3>
+                        <p>Precision motion control systems for automation.</p>
+                        <a href="{{ route('products') }}" class="view-details">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🛠️</div>
+                    <div class="product-info">
+                        <h3>Spare Parts</h3>
+                        <p>OEM-approved spare parts and consumables.</p>
+                        <a href="{{ route('products') }}" class="view-details">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="service-areas">
+        <div class="container">
+            <h2 class="section-title">Our Service Coverage</h2>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <h3>📍 Udupi</h3>
+                    <p>Head Office & Service Hub<br>Main administrative office, operations, customer support and service coordination.</p>
+                </div>
+                <div class="area-card">
+                    <h3>📍 Mangalore</h3>
+                    <p>Sales & Field Support<br>On-site technical support and project coordination.</p>
+                </div>
+                <div class="area-card">
+                    <h3>📍 Karwar</h3>
+                    <p>Sales & Field Support<br>Service coverage for port, marine and industrial customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-us-section" style="background: linear-gradient(135deg, #0a4874cc, #198b6033); padding: 40px 20px;">
+        <div class="container" style="max-width: 950px; margin: 0 auto; display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">     
+            <div class="contact-form" style="flex: 1 1 400px; background: #ffffffee; padding: 30px 25px; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+                <h3 style="color: #0f6ba8; margin-bottom: 18px; font-weight: 700; font-size: 1.4rem;">Get in Touch</h3>
+                <form action="/submit-contact" method="POST" style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 14px;">
+                    <div style="display: flex; gap: 14px;">
+                        <input type="text" name="name" placeholder="Your Name" required
+                        style="flex: 1; padding: 12px 14px; border-radius: 8px; border: 1px solid #b0bec5;">
+                        <input type="email" name="email" placeholder="Email" required
+                        style="flex: 1; padding: 12px 14px; border-radius: 8px; border: 1px solid #b0bec5;">
+                    </div>            
+                    <div style="display: flex; gap: 14px;">
+                        <input type="number" name="mobile" placeholder="Mobile" required
+                        style="flex: 1; padding: 12px 14px; border-radius: 8px; border: 1px solid #b0bec5;">
+                        <input type="text" name="location" placeholder="Location (City)" required
+                        style="flex: 1; padding: 12px 14px; border-radius: 8px; border: 1px solid #b0bec5;">
+                    </div>          
+                    <textarea name="message" rows="3" placeholder="Specify your requirement" required
+                        style="padding: 12px 14px; border-radius: 8px; border: 1px solid #b0bec5; resize: vertical;"></textarea>
+                    
+                    <button type="submit" style="background: #19c38b; color: white; padding: 12px 0; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; transition: background 0.3s;">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+            <div class="contact-info" style="flex: 1 1 280px; display: flex; align-items: center; gap: 20px; background: #e0f2f1cc; padding: 30px 20px; border-radius: 14px; box-shadow: 0 6px 16px rgba(25,195,139,0.25);">
+                <img src="https://cdn-icons-png.flaticon.com/512/2689/2689983.png" alt="Customer Support" style="width: 80px; height: 80px; border-radius: 12px; object-fit: cover;">
+                <div>
+                    <h3 style="margin: 0 0 8px; color: #0f6ba8; font-weight: 700;">Talk with Us</h3>
+                    <p style="margin: 0; color: #2e7d32; font-size: 0.95rem;">
+                    Have questions or need assistance? Our support team is here to help you promptly and professionally.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Cureifyinn LLP</h3>
+                <p>#02, 1st Floor, Mirage Building<br>Udupi District, Karnataka<br>India - 576102</p>
+                <div class="dealership-badge">
+                    <h4>🏆 Authorized Dealer</h4>
+                    <p>Siemens Innomotics<br>Coastal Karnataka Region</p>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ route('about') }}">About Us</a></li>
+                    <li><a href="{{ route('product-range') }}">Product Range</a></li>
+                    <li><a href="{{ route('products') }}">Products</a></li>
+                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Sales & Supply</a></li>
+                    <li><a href="#">Installation & Commissioning</a></li>
+                    <li><a href="#">Preventive Maintenance</a></li>
+                    <li><a href="#">Repair & Overhaul</a></li>
+                    <li><a href="#">Technical Support</a></li>
+                    <li><a href="#">Energy Audits</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <ul>
+                    <li>📞 Phone: +91-8123416657</li>
+                    <li>✉️ Email: info@cureifyinn.com</li>
+                    <li>✉️ Services: services@cureifyinn.com</li>
+                    <li>🌐 Web: www.cureifyinn.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; {{ date('Y') }} Cureifyinn LLP. All rights reserved. | Authorized Siemens Innomotics Dealer - Coastal Karnataka</p>
+        </div>
+    </footer>
+</body>
+</html>
