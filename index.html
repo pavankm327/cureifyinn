@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cureifyinn LLP - Authorized Siemens Innomotics Dealer</title>
+    <title>Cureifyinn LLP - Authorized Siemens Innomotics Dealer | Motors in Mangalore, Udupi, Karwar, Bangalore, Mysore, Kannur, Kasaragod</title>
+    <meta name="description" content="Authorized Siemens Innomotics dealer serving coastal Karnataka and beyond - Mangalore, Udupi, Karwar, Bangalore, Mysore, Kannur, Kasaragod. Industrial motors, drives, and motion solutions for marine, manufacturing, and infrastructure projects.">
+    <meta name="keywords" content="Siemens motors Mangalore, industrial motors Udupi, Innomotics dealer Karwar, electric motors Bangalore, Siemens drives Mysore, motors Kannur, motors Kasaragod, low voltage motors, high voltage motors, marine motors">
     <style>
         * {
             margin: 0;
@@ -27,6 +29,7 @@
             line-height: 1.6;
             color: var(--text-main);
             background: radial-gradient(circle at top left, #f3faf8 0, #f5f7fa 40%, #edf1f5 100%);
+            overflow-x: hidden;
         }
 
         /* Simple fade-in animation */
@@ -52,6 +55,42 @@
             100% { opacity: 1; transform: scale(1); }
         }
 
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Scroll to Top Button */
+        #scrollToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(38,176,148,0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #scrollToTop:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(38,176,148,0.6);
+        }
+
+        #scrollToTop.show {
+            display: flex;
+            animation: fadeUp 0.5s ease-out;
+        }
+
         /* Header Styles */
         header {
             background: linear-gradient(135deg, var(--bg-mid) 0%, var(--bg-dark) 100%);
@@ -64,8 +103,8 @@
 
         .top-bar {
             background: var(--bg-dark);
-            padding: 10px 0;
-            font-size: 0.9rem;
+            padding: 2px 0;
+            font-size: 0.8rem;
         }
 
         .top-bar .container {
@@ -76,6 +115,8 @@
             justify-content: space-between;
             align-items: center;
             color: #fff;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .contact-info span {
@@ -90,7 +131,7 @@
         nav {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 15px 20px;
+            padding: 5px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -103,7 +144,7 @@
         }
 
         .logo {
-            height: 60px;
+            height: 50px;
             width: auto;
             border-radius: 4px;
             transition: transform 0.4s ease;
@@ -130,6 +171,7 @@
             color: #fff;
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.95rem;
             transition: color 0.3s, transform 0.3s;
             position: relative;
         }
@@ -154,13 +196,25 @@
             width: 100%;
         }
 
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
         /* Hero Banner */
-        .hero-banner {
-            /* background:
-                radial-gradient(circle at 0% 0%, rgba(38,176,148,0.35) 0, transparent 50%),
-                radial-gradient(circle at 100% 100%, rgba(16,37,55,0.9) 0, rgba(16,37,55,1) 45%),
-                linear-gradient(135deg, rgba(44, 79, 104, 0.95), rgba(38, 176, 148, 0.9)); */
-            background: url('assets/background/innomotics-product-family-neutral-visual.jpg') center center / cover no-repeat fixed;
+        /* .hero-banner {
+            background: url('assets/background/innomotics-product-family-neutral-visual.jpg') center center / contain no-repeat fixed;
             position: relative;
             min-height: 70vh;
             color: #f9fafb;
@@ -168,6 +222,19 @@
             align-items: center;
             justify-content: center;
             padding: 0px 20px 100px;
+            overflow: hidden;
+            isolation: isolate;
+        } */
+
+        .hero-banner {
+            background: url('assets/background/innomotics-product-family-neutral-visual.jpg') center center / cover no-repeat;
+            position: relative;
+            min-height: 70vh;
+            color: #f9fafb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
             overflow: hidden;
             isolation: isolate;
         }
@@ -181,11 +248,20 @@
             pointer-events: none;
         }
 
+        .hero-banner::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: -1;
+        }
+
         .hero-content {
             max-width: 900px;
             margin: 0 auto;
             position: relative;
             animation: fadeUp 1s ease-out both;
+            text-align: center;
         }
 
         .hero-kicker {
@@ -441,7 +517,7 @@
         .category-card {
             background: #f8f9fa;
             border-radius: 14px;
-            padding: 28px 22px;
+            padding: 24px 20px;
             text-align: center;
             transition: all 0.3s;
             border: 2px solid transparent;
@@ -486,8 +562,8 @@
         }
 
         .category-icon {
-            width: 70px;
-            height: 70px;
+            width: 50px;
+            height: 50px;
             background: linear-gradient(135deg, var(--primary), var(--bg-mid));
             border-radius: 50%;
             display: flex;
@@ -529,115 +605,123 @@
             color: var(--primary-dark);
         }
 
-        /* Featured Products Section */
-        .featured-products {
-            background: var(--bg-soft);
-            text-align: center;
+        /* Featured Products Section - Responsive with proper icons */
+        #products {
+            /* padding: 4rem 2rem; */
+            padding: 80px 20px;
+            background: #ffffff;
+            background: linear-gradient(90deg, rgba(38, 176, 148, 0), rgb(255 255 255 / 40%), rgba(38, 176, 148, 0));
         }
 
-        .product-grid {
+        #products .featured-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-            animation: fadeUp 0.9s ease-out both;
+            /* grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); */
+            grid-template-columns: repeat(5, 1fr); /* 5 columns fixed */
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .product-card {
+        .featured-card {
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
             background: white;
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-            position: relative;
         }
 
-        .product-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -60%;
-            width: 40%;
-            height: 100%;
-            background: linear-gradient(120deg, rgba(255,255,255,0.15), transparent);
-            transform: skewX(-20deg);
-            transition: transform 0.5s;
+        .featured-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(38, 176, 148, 0.25);
         }
 
-        .product-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 26px rgba(0,0,0,0.2);
-        }
-
-        .product-card:hover::after {
-            transform: translateX(260%) skewX(-20deg);
-        }
-
-        .product-image {
-            height: 200px;
-            background: radial-gradient(circle at top, #e4edf6 0, #d8e2ee 45%, #cbd6e3 100%);
+        .featured-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50%;
+            margin: 0 auto 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            color: var(--primary);
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-info h3 {
-            color: var(--bg-mid);
-            margin-bottom: 10px;
-            font-size: 1.15rem;
-        }
-
-        .product-info p {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-
-        .view-details {
-            display: inline-block;
-            padding: 10px 20px;
-            background: var(--primary);
+            font-size: 2.2rem;
             color: white;
-            text-decoration: none;
-            border-radius: 999px;
-            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 10px 30px rgba(38, 176, 148, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .featured-card:hover .featured-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .featured-card h3 {
+            font-size: 1.0rem;
+            color: var(--bg-mid);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .featured-card .power,
+        .featured-card .efficiency {
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .featured-card .efficiency {
+            color: var(--bg-mid);
+        }
+
+        .featured-card button {
+            width: 100%;
+            padding: 0.6rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
             font-size: 0.9rem;
         }
 
-        .view-details:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
+        .featured-card button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(38, 176, 148, 0.4);
         }
 
-        /* Service Areas Section */
+        /* Service Areas Section - Updated with expanded coverage */
         .service-areas {
-            background: #ffffff;
+            background: linear-gradient(135deg, #f8f9fb 0%, #ffffff 100%);
         }
 
         .areas-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
             animation: fadeUp 0.9s ease-out both;
         }
 
         .area-card {
-            background: linear-gradient(135deg, var(--bg-mid), var(--bg-dark));
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
-            padding: 40px 32px;
-            border-radius: 14px;
+            padding: 12px 24px;
+            border-radius: 25px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(38, 176, 148, 0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 140px;
         }
 
         .area-card::before {
@@ -647,24 +731,136 @@
             right: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(38, 176, 148, 0.25) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .area-card:hover::before {
+            opacity: 1;
         }
 
         .area-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 12px;
+            font-size: 1rem;
+            font-weight: 600;
             position: relative;
+            z-index: 1;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+
+        .area-card:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(38, 176, 148, 0.45);
         }
 
         .area-card p {
             position: relative;
-            opacity: 0.9;
+            z-index: 1;
+            opacity: 0.95;
             font-size: 0.98rem;
+            line-height: 1.6;
         }
 
         .area-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 32px rgba(0,0,0,0.35);
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 16px 35px rgba(0,0,0,0.25);
+        }
+
+        /* Contact Section */
+        .contact-us-section {
+            background: linear-gradient(135deg, #0a4874cc, #198b6033);
+            padding: 60px 20px;
+        }
+
+        .contact-us-section .container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 950px;
+        }     
+
+        .contact-form {
+            flex: 1 1 400px;
+            background: #ffffffee;
+            padding: 30px 25px;
+            border-radius: 14px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h3 {
+            color: #0f6ba8;
+            margin-bottom: 18px;
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+
+        .contact-form form {
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 12px 14px;
+            border-radius: 8px;
+            border: 1px solid #b0bec5;
+            font-family: inherit;
+        }
+
+        .contact-form input[type="number"]::-webkit-outer-spin-button,
+        .contact-form input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .contact-form button[type="submit"] {
+            background: #19c38b;
+            color: white;
+            padding: 12px 0;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 1rem;
+        }
+
+        .contact-form button[type="submit"]:hover {
+            background: #17a77d;
+        }
+
+        .contact-info-side {
+            flex: 1 1 280px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #e0f2f1cc;
+            padding: 30px 20px;
+            border-radius: 14px;
+            box-shadow: 0 6px 16px rgba(25,195,139,0.25);
+        }
+
+        .contact-info-side img {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .contact-info-side h3 {
+            margin: 0 0 8px;
+            color: #0f6ba8;
+            font-weight: 700;
+        }
+
+        .contact-info-side p {
+            margin: 0;
+            color: #2e7d32;
+            font-size: 0.95rem;
         }
 
         /* Footer */
@@ -736,45 +932,361 @@
             font-size: 0.85rem;
         }
 
-        /* Responsive */
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: var(--bg-dark);
+            transition: right 0.3s ease;
+            z-index: 2000;
+            padding: 80px 20px 20px;
+            display: none;
+            flex-direction: column;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            flex: 1;
+        }
+
+        .mobile-menu li {
+            margin-bottom: 15px;
+        }
+
+        .mobile-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: block;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: color 0.3s;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1500;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .product-categories {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            
+            #products .featured-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                /* grid-template-columns: repeat(5, 1fr); */
+                gap: 1.2rem;
+            }
+        }
+
+        @media (max-width: 822px) {
+            .top-bar .container {
+                display: block;
+            }
+
+            .contact-info {
+                display: none;
+            }
+        }
+
         @media (max-width: 992px) {
             .product-categories {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
+            .areas-grid {
+                gap: 12px;
+            }
+            
+            .area-card {
+                padding: 10px 20px;
+                min-width: 120px;
+            }
+            
+            .area-card h3 {
+                font-size: 0.95rem;
+            }
+            
+            .top-bar .container {
+                /* flex-direction: column; */
+                gap: 10px;
+                text-align: center;
+                font-size: 0.7rem;
+            }
+            
+            .contact-info span {
+                margin-right: 0;
+                margin-bottom: 5px;
+                /* display: block; */
+            }
         }
 
         @media (max-width: 768px) {
+            .hero-banner {
+                background: url('assets/background/innomotics-product-family-neutral-visual.jpg') center center / cover no-repeat;
+                min-height: 60vh;
+                padding: 40px 20px;
+            }
+
             .hero-content h1 {
                 font-size: 2.2rem;
             }
 
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
             .about-content {
                 grid-template-columns: 1fr;
-            }
-
-            .nav-menu {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: flex-end;
-            }
-
-            .top-bar .container {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
+                gap: 30px;
             }
 
             .product-categories {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .areas-grid {
+                gap: 10px;
+            }
+            
+            .area-card {
+                padding: 8px 18px;
+                min-width: 110px;
+            }
+            
+            .area-card h3 {
+                font-size: 0.9rem;
             }
 
             .section {
                 padding: 60px 16px;
             }
+
+            .contact-us-section .container {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .contact-form {
+                flex: none;
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .contact-info-side {
+                flex: none;
+                width: 100%;
+                max-width: 350px;
+                justify-content: center;
+            }
+
+            .contact-info-side {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #products .featured-grid {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                gap: 1rem;
+                padding: 0 10px;
+            }
+
+            .featured-card {
+                padding: 1.2rem 1rem;
+            }
+
+            .featured-card h3 {
+                font-size: 1rem;
+            }
+
+            .featured-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+            }
+
+            #scrollToTop {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .about-text .btn-primary {
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                width: 130px;
+                padding: 6px 12px;
+                font-size: 0.9rem;
+                text-align: center;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .hero-banner {
+                background: url('assets/background/innomotics-product-family-neutral-visual.jpg') center center / cover no-repeat;
+                min-height: 50vh;
+                padding: 30px 15px;
+            }
+
+            .hero-content {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
+
+            .hero-badges {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .stat-box {
+                padding: 18px 12px;
+            }
+
+            .areas-grid {
+                gap: 8px;
+            }
+            
+            .area-card {
+                padding: 8px 16px;
+                min-width: 100px;
+            }
+            
+            .area-card h3 {
+                font-size: 0.85rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .top-bar .container > div:last-child {
+                order: -1;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Responsive Contact Form Inputs - Mobile First */
+        @media (max-width: 768px) {
+            .contact-form form > div {
+                flex-direction: column !important;
+            }
+            
+            .contact-form input,
+            .contact-form textarea {
+                width: 100% !important;
+                flex: none !important;
+            }
+            
+            .contact-form input[type="text"],
+            .contact-form input[type="email"],
+            .contact-form input[type="number"],
+            .contact-form input[type="tel"],
+            .contact-form input:not([type]),
+            .contact-form textarea {
+                min-width: 0;
+            }
+        }
+
+        /* Extra small screens - ensure no horizontal overflow */
+        @media (max-width: 480px) {
+            .contact-form {
+                padding: 25px 20px;
+            }
+            
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 16px; /* Prevents zoom on iOS when focusing */
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Product Range</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+
     <!-- Header -->
     <header>
         <div class="top-bar">
@@ -784,7 +1296,7 @@
                     <span>✉️ info@cureifyinn.com</span>
                 </div>
                 <div>
-                    <span>Serving Coastal Karnataka | Mangalore • Udupi • Karwar</span>
+                    <span>Serving Karnataka & Northern Kerala | Bangalore | Mangalore | Udupi | Karwar | Mysore | Kannur | Kasaragod</span>
                 </div>
             </div>
         </div>
@@ -800,6 +1312,11 @@
                 <li><a href="#">Products</a></li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
+            <div class="mobile-menu-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
@@ -811,11 +1328,11 @@
                 <span>Authorized Siemens Innomotics Partner</span>
             </div>
             <h1>Authorized Siemens Innomotics <span>Dealer</span></h1>
-            <p>Delivering world-class industrial motors, drives and motion solutions across Coastal Karnataka.</p>
+            <p>Delivering world-class industrial motors, drives and motion solutions across Karnataka and Northern Kerala - Bangalore, Mangalore, Udupi, Karwar, Mysore, Kannur, Kasaragod.</p>
             <div class="hero-badges">
                 <div class="hero-badge">Genuine Siemens Innomotics portfolio</div>
                 <div class="hero-badge">Engineering-led sizing and selection</div>
-                <div class="hero-badge">Rapid local support | Udupi • Mangalore • Karwar</div>
+                <div class="hero-badge">Rapid support across Karnataka & Kerala</div>
             </div>
             <div class="cta-buttons">
                 <a href="{{ route('products') }}" class="btn-primary">Explore Products</a>
@@ -829,19 +1346,19 @@
         <div class="container">
             <h2 class="section-title">About Us</h2>
             <p class="section-subtitle">
-                Cureifyinn LLP is an authorized Siemens Innomotics dealer serving the coastal Karnataka region (Mangalore, Udupi and Karwar), focused on reliable supply, fast local support and energy-efficient motion solutions.
+                Cureifyinn LLP is an authorized Siemens Innomotics dealer serving Karnataka and Northern Kerala regions including Bangalore, Mangalore, Udupi, Karwar, Mysore, Kannur and Kasaragod, focused on reliable supply, fast local support and energy-efficient motion solutions.
             </p>
             <div class="about-content">
                 <div class="about-text">
                     <h3 style="color: #2c4f68; margin-bottom: 20px;">Company Overview</h3>
-                    <p>Cureifyinn LLP is an authorized dealer for <strong>Siemens Innomotics</strong> products serving the coastal Karnataka region (Mangalore, Udupi and Karwar). We deliver industrial motors, drives and motion solutions tailored to manufacturing, process industries, marine, water & wastewater, and infrastructure projects.</p>
-                    <p>Our focus is on reliable supply, fast local support, and engineering-led solutions that reduce downtime and improve energy efficiency.</p>
-                    <a href="{{ route('about') }}" class="btn-primary" style="margin-top: 20px;">Read More</a>
+                    <p>Cureifyinn LLP is an authorized dealer for <strong>Siemens Innomotics</strong> products serving Karnataka and Northern Kerala regions (Bangalore, Mangalore, Udupi, Karwar, Mysore, Kannur, Kasaragod). We deliver industrial motors, drives and motion solutions tailored to manufacturing, process industries, marine, water & wastewater, and infrastructure projects.</p>
+                    <p>Our focus is on reliable supply, fast local support, and engineering-led solutions that reduce downtime and improve energy efficiency across all our service locations.</p>
+                    <a href="#" class="btn-primary" style="margin-top: 20px;">Read More</a>
                 </div>
                 <div class="about-image">
                     <div class="about-stats">
                         <div class="stat-box">
-                            <div class="stat-number">3</div>
+                            <div class="stat-number">7+</div>
                             <div class="stat-label">Service Locations</div>
                         </div>
                         <div class="stat-box">
@@ -867,144 +1384,164 @@
         <div class="container">
             <h2 class="section-title">Product Range</h2>
             <p class="product-range-intro">
-                Comprehensive Siemens Innomotics portfolio for motors, drives and motion solutions, tailored for marine, industrial and infrastructure applications across coastal Karnataka.
+                Comprehensive Siemens Innomotics portfolio for motors, drives and motion solutions, tailored for marine, industrial and infrastructure applications across Karnataka and Northern Kerala.
             </p>
             <div class="product-categories">
                 <!-- Row 1 -->
                 <div class="category-card">
                     <div class="category-icon">⚙️</div>
-                    <h3>Industrial Motors</h3>
-                    <p>Synchronous and asynchronous motors with IE3/IE4 efficiency classes for diverse applications.</p>
-                    <a href="{{ route('product-range') }}" class="learn-more">Learn More →</a>
+                    <h3>Low Voltage Motors</h3>
+                    <p>Synchronous and asynchronous motors with IE3/IE4 efficiency classes for diverse industrial applications across Bangalore, Mangalore and Udupi.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
                 </div>
                 <div class="category-card">
                     <div class="category-icon">⚡</div>
-                    <h3>Drives & Converters</h3>
-                    <p>Low and medium-voltage drives for precise motor control and energy optimization.</p>
-                    <a href="{{ route('product-range') }}" class="learn-more">Learn More →</a>
+                    <h3>High Voltage Motors</h3>
+                    <p>High-performance motors for heavy industrial applications in manufacturing plants and power generation facilities.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
                 </div>
                 <div class="category-card">
                     <div class="category-icon">🔧</div>
-                    <h3>Integrated Solutions</h3>
-                    <p>Motor and drive packages for pumps, fans, conveyors and compressors.</p>
-                    <a href="{{ route('product-range') }}" class="learn-more">Learn More →</a>
+                    <h3>AboveNEMA Motors</h3>
+                    <p>Specialized motors exceeding NEMA standards for demanding applications in marine and coastal environments.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
                 </div>
 
                 <!-- Row 2 -->
                 <div class="category-card">
                     <div class="category-icon">🚢</div>
-                    <h3>Marine Solutions</h3>
-                    <p>Marine-duty motors and coastal-environment solutions with enhanced protection.</p>
-                    <a href="{{ route('product-range') }}" class="learn-more">Learn More →</a>
+                    <h3>Medium Voltage Drives</h3>
+                    <p>Advanced drive systems for precise motor control in marine applications and port operations in Karwar and Mangalore.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
                 </div>
                 <div class="category-card">
                     <div class="category-icon">💧</div>
-                    <h3>Pump & HVAC Packages</h3>
-                    <p>Optimized motor-drive packages for water, wastewater and HVAC applications.</p>
-                    <a href="{{ route('product-range') }}" class="learn-more">Learn More →</a>
+                    <h3>Digitalization</h3>
+                    <p>Smart motor monitoring and IoT solutions for water treatment plants and industrial automation in Mysore and Bangalore.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
                 </div>
                 <div class="category-card">
                     <div class="category-icon">🏭</div>
-                    <h3>Process Industry Sets</h3>
-                    <p>Solutions for cement, chemical, F&B and other process industries.</p>
-                    <a href="{{ route('product-range') }}" class="learn-more">Learn More →</a>
+                    <h3>Geared Motors</h3>
+                    <p>Integrated motor-gearbox solutions for conveyor systems, mixers and heavy machinery in process industries.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
                 </div>
 
                 <!-- Row 3 -->
                 <div class="category-card">
                     <div class="category-icon">🧩</div>
-                    <h3>Retrofit Solutions</h3>
-                    <p>Energy-efficient replacements and retrofit kits for existing installations.</p>
-                    <a href="{{ route('product-range') }}" class="learn-more">Learn More →</a>
+                    <h3>Generators</h3>
+                    <p>Reliable power generation solutions for backup systems and prime power applications across all service locations.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
                 </div>
                 <div class="category-card">
                     <div class="category-icon">🛠️</div>
-                    <h3>Spare Parts</h3>
-                    <p>OEM-certified spare parts, consumables and maintenance kits.</p>
-                    <a href="{{ route('product-range') }}" class="learn-more">Learn More →</a>
+                    <h3>Integrate Shield</h3>
+                    <p>Advanced protection systems and integrated solutions for harsh industrial environments and coastal applications.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
                 </div>
                 <div class="category-card">
                     <div class="category-icon">📦</div>
-                    <h3>Panels & Integration</h3>
-                    <p>Drive panels and integration support for turnkey motion systems.</p>
-                    <a href="{{ route('product-range') }}" class="learn-more">Learn More →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Products -->
-    <section class="section featured-products">
-        <div class="container">
-            <h2 class="section-title">Featured Products</h2>
-            <p class="section-subtitle">
-                Highlighted Siemens Innomotics motors, drives and motion systems for typical coastal Karnataka applications.
-            </p>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-image">⚙️</div>
-                    <div class="product-info">
-                        <h3>SIMOTICS Motors</h3>
-                        <p>High-efficiency industrial motors for demanding applications.</p>
-                        <a href="{{ route('products') }}" class="view-details">View Details</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">📊</div>
-                    <div class="product-info">
-                        <h3>SINAMICS Drives</h3>
-                        <p>Variable-speed drives for optimal performance and energy savings.</p>
-                        <a href="{{ route('products') }}" class="view-details">View Details</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">🔄</div>
-                    <div class="product-info">
-                        <h3>Motion Control</h3>
-                        <p>Precision motion control systems for automation.</p>
-                        <a href="{{ route('products') }}" class="view-details">View Details</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">🛠️</div>
-                    <div class="product-info">
-                        <h3>Spare Parts</h3>
-                        <p>OEM-approved spare parts and consumables.</p>
-                        <a href="{{ route('products') }}" class="view-details">View Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Service Areas -->
-    <section class="section service-areas">
-        <div class="container">
-            <h2 class="section-title">Our Service Coverage</h2>
-            <p class="section-subtitle">
-                Strategic presence in Udupi, Mangalore and Karwar providing complete coverage across the coastal belt for rapid response and project execution.
-            </p>
-            <div class="areas-grid">
-                <div class="area-card">
-                    <h3>📍 Udupi</h3>
-                    <p>Head Office & Service Hub<br>Main administrative office, operations, customer support and service coordination.</p>
-                </div>
-                <div class="area-card">
-                    <h3>📍 Mangalore</h3>
-                    <p>Sales & Field Support<br>On-site technical support and project coordination.</p>
-                </div>
-                <div class="area-card">
-                    <h3>📍 Karwar</h3>
-                    <p>Sales & Field Support<br>Service coverage for port, marine and industrial customers.</p>
+                    <h3>Motors Spindles</h3>
+                    <p>High-precision spindle motors for CNC machines and manufacturing applications in Bangalore and Mysore.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="contact-us-section" style="background: linear-gradient(135deg, #0a4874cc, #198b6033); padding: 40px 20px;">
-        <div class="container" style="max-width: 950px; margin: 0 auto; display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">     
-            <div class="contact-form" style="flex: 1 1 400px; background: #ffffffee; padding: 30px 25px; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
-                <h3 style="color: #0f6ba8; margin-bottom: 18px; font-weight: 700; font-size: 1.4rem;">Get in Touch</h3>
+    <!-- Featured Products -->
+    <section id="products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <div class="featured-icon">🔄</div>
+                    <h3>SIMOTICS GP Motor</h3>
+                    <!-- <p class="power">0.12 - 200 kW</p>
+                    <p class="efficiency">IE3/IE4 Efficiency</p> -->
+                    <button>View Details</button>
+                </div>
+
+                <div class="featured-card">
+                    <div class="featured-icon">⚙️</div>
+                    <h3>SINAMICS G120 Drive</h3>
+                    <!-- <p class="power">0.37 - 250 kW</p>
+                    <p class="efficiency">Modular Design</p> -->
+                    <button>View Details</button>
+                </div>
+
+                <div class="featured-card">
+                    <div class="featured-icon">🛡️</div>
+                    <h3>SIMOTICS SD Motor</h3>
+                    <!-- <p class="power">0.09 - 200 kW</p>
+                    <p class="efficiency">Severe Duty</p> -->
+                    <button>View Details</button>
+                </div>
+
+                <div class="featured-card">
+                    <div class="featured-icon">📏</div>
+                    <h3>SINAMICS V20 Drive</h3>
+                    <!-- <p class="power">0.12 - 30 kW</p>
+                    <p class="efficiency">Compact Design</p> -->
+                    <button>View Details</button>
+                </div>
+
+                <div class="featured-card">
+                    <div class="featured-icon">🔋</div>
+                    <h3>SIMOTICS HV Motor</h3>
+                    <!-- <p class="power">315 - 7100 kW</p>
+                    <p class="efficiency">High Voltage</p> -->
+                    <button>View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas - Updated -->
+    <section class="section service-areas">
+        <div class="container">
+            <h2 class="section-title">Our Service Coverage</h2>
+            <p class="section-subtitle">
+                Comprehensive coverage across Karnataka and Northern Kerala with strategic locations for rapid response, technical support and project execution for industrial motor solutions.
+            </p>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <h3>Bangalore</h3>
+                    <!-- <p>Industrial Hub & Technical Center<br>Complete engineering support, motor selection, drive system design and commissioning for manufacturing and IT industries.</p> -->
+                </div>
+                <div class="area-card">
+                    <h3>Mangalore</h3>
+                    <!-- <p>Port & Marine Operations<br>Specialized marine motor solutions, port equipment drives and coastal industrial applications with 24/7 emergency support.</p> -->
+                </div>
+                <div class="area-card">
+                    <h3>Udupi</h3>
+                    <!-- <p>Head Office & Service Hub<br>Main administrative office, inventory management, customer support and regional coordination center.</p> -->
+                </div>
+                <div class="area-card">
+                    <h3>Karwar</h3>
+                    <!-- <p>Naval & Marine Support<br>Specialized solutions for shipbuilding, naval applications and heavy marine equipment with certified marine motor expertise.</p> -->
+                </div>
+                <div class="area-card">
+                    <h3>Mysore</h3>
+                    <!-- <p>Industrial Manufacturing Zone<br>Process industry solutions, textile machinery motors, food processing drives and precision engineering support.</p> -->
+                </div>
+                <div class="area-card">
+                    <h3>Kannur</h3>
+                    <!-- <p>Northern Kerala Operations<br>Cashew processing, coir industry motors, agricultural processing solutions and regional industrial support.</p> -->
+                </div>
+                <div class="area-card">
+                    <h3>Kasaragod</h3>
+                    <!-- <p>Southern Coverage Extension<br>Border region support for coastal industries, fisheries equipment and small to medium industrial applications.</p> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact-us-section">
+        <div class="container">     
+            <div class="contact-form">
+                <h3>Get in Touch</h3>
                 <form action="/submit-contact" method="POST" style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 14px;">
                     <div style="display: flex; gap: 14px;">
                         <input type="text" name="name" placeholder="Your Name" required
@@ -1026,13 +1563,11 @@
                     </button>
                 </form>
             </div>
-            <div class="contact-info" style="flex: 1 1 280px; display: flex; align-items: center; gap: 20px; background: #e0f2f1cc; padding: 30px 20px; border-radius: 14px; box-shadow: 0 6px 16px rgba(25,195,139,0.25);">
-                <img src="https://cdn-icons-png.flaticon.com/512/2689/2689983.png" alt="Customer Support" style="width: 80px; height: 80px; border-radius: 12px; object-fit: cover;">
+            <div class="contact-info-side">
+                <img src="https://cdn-icons-png.flaticon.com/512/2689/2689983.png" alt="Customer Support">
                 <div>
-                    <h3 style="margin: 0 0 8px; color: #0f6ba8; font-weight: 700;">Talk with Us</h3>
-                    <p style="margin: 0; color: #2e7d32; font-size: 0.95rem;">
-                    Have questions or need assistance? Our support team is here to help you promptly and professionally.
-                    </p>
+                    <h3>Talk with Us</h3>
+                    <p>Have questions or need assistance? Our support team is here to help you promptly and professionally across all our service locations.</p>
                 </div>
             </div>
         </div>
@@ -1046,17 +1581,17 @@
                 <p>#02, 1st Floor, Mirage Building<br>Udupi District, Karnataka<br>India - 576102</p>
                 <div class="dealership-badge">
                     <h4>🏆 Authorized Dealer</h4>
-                    <p>Siemens Innomotics<br>Coastal Karnataka Region</p>
+                    <p>Siemens Innomotics<br>Karnataka & Northern Kerala Region</p>
                 </div>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                    <li><a href="{{ route('about') }}">About Us</a></li>
-                    <li><a href="{{ route('product-range') }}">Product Range</a></li>
-                    <li><a href="{{ route('products') }}">Products</a></li>
-                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Product Range</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -1081,8 +1616,152 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Cureifyinn LLP. All rights reserved. | Authorized Siemens Innomotics Dealer - Coastal Karnataka</p>
+            <p>&copy; 2025 Cureifyinn LLP. All rights reserved. | Authorized Siemens Innomotics Dealer - Karnataka & Northern Kerala</p>
         </div>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" title="Back to Top">
+        ⬆
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        mobileOverlay.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Scroll to Top Functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Featured products animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = `${Math.random() * 0.3}s`;
+                    entry.target.style.animation = 'fadeUp 0.6s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe featured cards
+        document.querySelectorAll('.featured-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Add loading animation to category cards
+        document.querySelectorAll('.category-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+            observer.observe(card);
+        });
+
+        // Form validation
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const requiredFields = this.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.style.borderColor = '#e74c3c';
+                } else {
+                    field.style.borderColor = '#b0bec5';
+                }
+            });
+            
+            if (!isValid) {
+                e.preventDefault();
+                alert('Please fill in all required fields.');
+            }
+        });
+
+        // Add focus styles for accessibility
+        document.querySelectorAll('input, textarea, button').forEach(element => {
+            element.addEventListener('focus', () => {
+                element.style.outline = '2px solid var(--primary)';
+                element.style.outlineOffset = '2px';
+            });
+            element.addEventListener('blur', () => {
+                element.style.outline = 'none';
+            });
+        });
+
+        // Lazy loading for images (if you add more images later)
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
 </body>
 </html>
+
+
+<!-- Provide get in touch -> (stick to the right (Vertical text)) -> scroll to the Get in Touch section on the same page. It should be in provided in all the pages -->
+<!-- Featured Products should be same as in Algnition -->
