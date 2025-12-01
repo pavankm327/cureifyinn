@@ -7,6 +7,8 @@
     <meta name="description" content="Authorized Siemens Innomotics dealer serving coastal Karnataka and beyond - Mangalore, Udupi, Karwar, Bangalore, Mysore, Kannur, Kasaragod. Industrial motors, drives, and motion solutions for marine, manufacturing, and infrastructure projects.">
     <meta name="keywords" content="Siemens motors Mangalore, industrial motors Udupi, Innomotics dealer Karwar, electric motors Bangalore, Siemens drives Mysore, motors Kannur, motors Kasaragod, low voltage motors, high voltage motors, marine motors">
     
+    <link rel="preload" as="image" href="assets/background/innomotics-product-family-neutral-visual.jpg" fetchpriority="high">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet" />
 
     <style>
@@ -236,7 +238,7 @@
         } */
 
         .hero-banner {
-            background: url('assets/background/innomotics-product-family-neutral-visual.jpg') center center / cover no-repeat;
+            /* background: url('assets/background/innomotics-product-family-neutral-visual.jpg') center center / cover no-repeat; */
             position: relative;
             min-height: 70vh;
             color: #f9fafb;
@@ -246,6 +248,16 @@
             padding: 0;
             overflow: hidden;
             isolation: isolate;
+        }
+
+        .hero-banner-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
         }
 
         .hero-banner::after {
@@ -1175,9 +1187,12 @@
 
         @media (max-width: 768px) {
             .hero-banner {
-                background: url('assets/background/innomotics-product-family-neutral-visual.jpg') center center / cover no-repeat;
-                min-height: 60vh;
+                min-height: 105vh;
                 padding: 40px 20px;
+            }
+
+            .hero-banner-image {
+                object-fit: cover;
             }
 
             .hero-content h1 {
@@ -1291,9 +1306,12 @@
 
         @media screen and (max-width: 576px) {
             .hero-banner {
-                background: url('assets/background/innomotics-product-family-neutral-visual.jpg') center center / cover no-repeat;
                 min-height: 50vh;
                 padding: 30px 15px;
+            }
+            
+            .hero-banner-image {
+                object-fit: cover;
             }
 
             .hero-content {
@@ -1479,22 +1497,14 @@
 
     <!-- Hero Banner -->
     <section class="hero-banner">
+        <img src="assets/background/innomotics-product-family-neutral-visual.jpg" 
+            alt="Siemens Innomotics Product Family" 
+            class="hero-banner-image"
+            fetchpriority="high"
+            width="1920"
+            height="1080">
         <div class="hero-content">
-            <!-- <div class="hero-kicker">
-                <span></span>
-                <span>Authorized Siemens Innomotics Partner</span>
-            </div>
-            <h1>Authorized Siemens Innomotics <span>Dealer</span></h1>
-            <p>Delivering world-class industrial motors, drives and motion solutions across Karnataka and Northern Kerala - Bangalore, Mangalore, Udupi, Karwar, Mysore, Kannur, Kasaragod.</p>
-            <div class="hero-badges">
-                <div class="hero-badge">Genuine Siemens Innomotics portfolio</div>
-                <div class="hero-badge">Engineering-led sizing and selection</div>
-                <div class="hero-badge">Rapid support across Karnataka & Kerala</div>
-            </div>
-            <div class="cta-buttons">
-                <a href="{{ route('products') }}" class="btn-primary">Explore Products</a>
-                <a href="{{ route('contact') }}" class="btn-secondary">Get a Quote</a>
-            </div> -->
+            <!-- content here -->
         </div>
     </section>
 
