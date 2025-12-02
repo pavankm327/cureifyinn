@@ -351,7 +351,7 @@
 
         .btn-primary,
         .btn-secondary {
-            padding: 15px 35px;
+            padding: 6px 30px;
             border: none;
             border-radius: 30px;
             font-size: 1.05rem;
@@ -690,6 +690,233 @@
             margin: 0;
         }
 
+        .industries {
+            margin-bottom: 60px;
+        }
+        
+        .industries-title {
+            color: #2c4f68; 
+            margin-bottom: 25px; 
+            font-size: 1.8rem; 
+            text-align: center;
+        }
+         
+        .industries-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+            animation: fadeUp 0.9s ease-out both;
+        }
+
+        .industries-content span {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(38, 176, 148, 0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 140px;
+        }
+
+        .industries-content span::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .industries-content span:hover::before {
+            opacity: 1;
+        }
+
+        .industries-content span:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 16px 35px rgba(0,0,0,0.25);
+        }
+
+        .competitive_advantages {
+            background: linear-gradient(135deg, var(--bg-mid), var(--bg-dark));
+            color: white;
+            padding: 40px;
+            border-radius: 14px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .competitive_advantages_title {
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        .competitive_advantages_content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .competitive_advantages_description {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .competitive_advantages_description h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .competitive_advantages_description p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }    
+
+        .engagement_process {
+            margin-bottom: 60px;
+        }
+        
+        .engagement_process_title {
+            color: #2c4f68;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .engagement_process_content {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            position: relative;
+        }
+
+        .engagement_process_description {
+            text-align: center;
+            position: relative;
+        }
+
+        .engagement_process_count {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(38,176,148,0.4);
+        }
+
+        .engagement_process_description h4 {
+            color: var(--bg-mid);
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+         
+        .engagement_process_description p {
+            color: #666;
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        .pricing_warranty {
+            margin-bottom: 60px;
+        }
+        .pricing_warranty_title {
+            color: #2c4f68;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .pricing_warranty_content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .pricing_warranty_description {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary);
+        }
+
+        .pricing_warranty_icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .pricing_warranty_description h4 {
+            color: var(--bg-mid);
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        
+        .pricing_warranty_description p {
+            color: #666;
+            text-align: center;
+            line-height: 1.8;
+        }
+        
+        .call_to_action {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(38,176,148,0.1), rgba(44,79,104,0.1));
+            padding: 50px 30px;
+            border-radius: 14px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .call_to_action h3 {
+            color: #2c4f68;
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+
+        .call_to_action p {
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+/*         
+        .call_to_action a {
+            font-size: 1.1rem;
+            padding: 18px 40px;
+            display: inline-block;
+            text-decoration: none;
+        } */
+            
         /* Product Range Section */
         .product-range-section {
             background: #ffffff;
@@ -1346,19 +1573,16 @@
             .product-categories {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
-            .areas-grid {
+            .industries-content {
                 gap: 12px;
             }
             
-            .area-card {
+            .industries-content span {
                 padding: 10px 20px;
                 min-width: 120px;
-            }
-            
-            .area-card h3 {
                 font-size: 0.95rem;
             }
-            
+
             .top-bar .container {
                 /* flex-direction: column; */
                 gap: 10px;
@@ -1411,21 +1635,33 @@
                 gap: 30px;
             }
 
+            .competitive_advantages_content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .engagement_process_content {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+
+            .pricing_warranty_content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
             .product-categories {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
 
-            .areas-grid {
+            .industries-content {
                 gap: 10px;
             }
             
-            .area-card {
+            .industries-content span {
                 padding: 8px 18px;
                 min-width: 110px;
-            }
-            
-            .area-card h3 {
                 font-size: 0.9rem;
             }
 
@@ -1496,11 +1732,12 @@
                 display: flex;
             }
 
-            .about-text .btn-primary {
+            .btn-primary {
                 margin-left: auto;
                 margin-right: auto;
                 display: block;
-                width: 130px;
+                width: 100%;
+                max-width: 180px;
                 padding: 6px 12px;
                 font-size: 0.9rem;
                 text-align: center;
@@ -1534,16 +1771,33 @@
             .core-services-description {
                 padding: 12px;
             }
+            
             .our-services-content {
                 grid-template-columns: 1fr; 
                 gap: 30px;
             }
+            
             .core-services-icon {
                 width: 50px;
                 height: 50px;
             }
 
             .geographic-coverage-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .competitive_advantages_content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .engagement_process_content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .pricing_warranty_content {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
@@ -1562,7 +1816,7 @@
             .btn-primary,
             .btn-secondary {
                 width: 100%;
-                max-width: 250px;
+                max-width: 180px;
                 justify-content: center;
             }
 
@@ -1585,19 +1839,16 @@
                 padding: 18px 12px;
             }
 
-            .areas-grid {
+            .industries-content {
                 gap: 8px;
             }
             
-            .area-card {
-                padding: 8px 16px;
-                min-width: 100px;
-            }
-            
-            .area-card h3 {
+            .industries-content span {
+                padding: 4px 8px;
+                min-width: 135px;
                 font-size: 0.85rem;
             }
-
+            
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 30px;
@@ -1874,97 +2125,97 @@
             </div>
 
             <!-- Industries We Serve -->
-            <!-- <div style="margin-bottom: 60px;">
-                <h3 style="color: #2c4f68; margin-bottom: 25px; font-size: 1.8rem; text-align: center;">Industries We Serve</h3>
-                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
-                    <span style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 12px 24px; border-radius: 25px; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(38, 176, 148, 0.3);">Marine & Ports</span>
-                    <span style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 12px 24px; border-radius: 25px; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(38, 176, 148, 0.3);">Water & Wastewater</span>
-                    <span style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 12px 24px; border-radius: 25px; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(38, 176, 148, 0.3);">Food & Beverage</span>
-                    <span style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 12px 24px; border-radius: 25px; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(38, 176, 148, 0.3);">Cement & Building Materials</span>
-                    <span style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 12px 24px; border-radius: 25px; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(38, 176, 148, 0.3);">Chemical & Pharmaceuticals</span>
-                    <span style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 12px 24px; border-radius: 25px; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(38, 176, 148, 0.3);">Textiles & Paper</span>
-                    <span style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 12px 24px; border-radius: 25px; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(38, 176, 148, 0.3);">Manufacturing (SME)</span>
+            <div class="industries">
+                <h3 class="industries-title">Industries We Serve</h3>
+                <div class="industries-content">
+                    <span>Marine & Ports</span>
+                    <span>Water & Wastewater</span>
+                    <span>Food & Beverage</span>
+                    <span>Cement & Building Materials</span>
+                    <span>Chemical & Pharmaceuticals</span>
+                    <span>Textiles & Paper</span>
+                    <span>Manufacturing (SME)</span>
                 </div>
-            </div> -->
+            </div>
 
             <!-- Competitive Advantages -->
-            <!-- <div style="background: linear-gradient(135deg, var(--bg-mid), var(--bg-dark)); color: white; padding: 40px; border-radius: 14px; margin-bottom: 60px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-                <h3 style="color: var(--primary); margin-bottom: 25px; font-size: 1.8rem; text-align: center;">Why Choose Us</h3>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-                    <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; border-left: 4px solid var(--primary);">
-                        <h4 style="color: var(--primary); margin-bottom: 10px;">🏆 Authorized Partner</h4>
-                        <p style="margin: 0; opacity: 0.9; font-size: 0.95rem;">Direct access to OEM technical resources and genuine spares</p>
+            <div class="competitive_advantages">
+                <h3 class="competitive_advantages_title">Why Choose Us</h3>
+                <div class="competitive_advantages_content">
+                    <div class="competitive_advantages_description">
+                        <h4>🏆 Authorized Partner</h4>
+                        <p>Direct access to OEM technical resources and genuine spares</p>
                     </div>
                     <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; border-left: 4px solid var(--primary);">
-                        <h4 style="color: var(--primary); margin-bottom: 10px;">⚡ Fast Local Response</h4>
-                        <p style="margin: 0; opacity: 0.9; font-size: 0.95rem;">Strategically located with skilled engineers for rapid support</p>
+                        <h4>⚡ Fast Local Response</h4>
+                        <p>Strategically located with skilled engineers for rapid support</p>
                     </div>
                     <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; border-left: 4px solid var(--primary);">
-                        <h4 style="color: var(--primary); margin-bottom: 10px;">🌊 Coastal Expertise</h4>
-                        <p style="margin: 0; opacity: 0.9; font-size: 0.95rem;">Material selection for salt-laden, humid environments</p>
+                        <h4>🌊 Coastal Expertise</h4>
+                        <p>Material selection for salt-laden, humid environments</p>
                     </div>
                     <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; border-left: 4px solid var(--primary);">
-                        <h4 style="color: var(--primary); margin-bottom: 10px;">📋 Transparent Process</h4>
-                        <p style="margin: 0; opacity: 0.9; font-size: 0.95rem;">Detailed quotations, MTTR/MTBF metrics and clear documentation</p>
+                        <h4>📋 Transparent Process</h4>
+                        <p>Detailed quotations, MTTR/MTBF metrics and clear documentation</p>
                     </div>
                 </div>
-            </div> -->
+            </div>
 
             <!-- Engagement Process -->
-            <!-- <div style="margin-bottom: 60px;">
-                <h3 style="color: #2c4f68; margin-bottom: 25px; font-size: 1.8rem; text-align: center;">Our Engagement Process</h3>
-                <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; position: relative;">
-                    <div style="text-align: center; position: relative;">
-                        <div style="width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem; font-weight: bold; box-shadow: 0 4px 12px rgba(38,176,148,0.4);">1</div>
-                        <h4 style="color: var(--bg-mid); margin-bottom: 8px; font-size: 0.95rem;">Inquiry & Survey</h4>
-                        <p style="color: #666; font-size: 0.85rem; margin: 0;">Free consultation</p>
+            <div class="engagement_process">
+                <h3 class="engagement_process_title">Our Engagement Process</h3>
+                <div class="engagement_process_content">
+                    <div class="engagement_process_description">
+                        <div class="engagement_process_count">1</div>
+                        <h4>Inquiry & Survey</h4>
+                        <p>Free consultation</p>
                     </div>
-                    <div style="text-align: center; position: relative;">
-                        <div style="width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem; font-weight: bold; box-shadow: 0 4px 12px rgba(38,176,148,0.4);">2</div>
-                        <h4 style="color: var(--bg-mid); margin-bottom: 8px; font-size: 0.95rem;">Proposal</h4>
-                        <p style="color: #666; font-size: 0.85rem; margin: 0;">Technical & commercial</p>
+                    <div class="engagement_process_description">
+                        <div class="engagement_process_count">2</div>
+                        <h4>Proposal</h4>
+                        <p>Technical & commercial</p>
                     </div>
-                    <div style="text-align: center; position: relative;">
-                        <div style="width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem; font-weight: bold; box-shadow: 0 4px 12px rgba(38,176,148,0.4);">3</div>
-                        <h4 style="color: var(--bg-mid); margin-bottom: 8px; font-size: 0.95rem;">Delivery</h4>
-                        <p style="color: #666; font-size: 0.85rem; margin: 0;">OEM-sourced parts</p>
+                    <div class="engagement_process_description">
+                        <div class="engagement_process_count">3</div>
+                        <h4>Delivery</h4>
+                        <p>OEM-sourced parts</p>
                     </div>
-                    <div style="text-align: center; position: relative;">
-                        <div style="width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem; font-weight: bold; box-shadow: 0 4px 12px rgba(38,176,148,0.4);">4</div>
-                        <h4 style="color: var(--bg-mid); margin-bottom: 8px; font-size: 0.95rem;">Installation</h4>
-                        <p style="color: #666; font-size: 0.85rem; margin: 0;">Certified engineers</p>
+                    <div class="engagement_process_description">
+                        <div class="engagement_process_count">4</div>
+                        <h4>Installation</h4>
+                        <p>Certified engineers</p>
                     </div>
-                    <div style="text-align: center; position: relative;">
-                        <div style="width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem; font-weight: bold; box-shadow: 0 4px 12px rgba(38,176,148,0.4);">5</div>
-                        <h4 style="color: var(--bg-mid); margin-bottom: 8px; font-size: 0.95rem;">Support</h4>
-                        <p style="color: #666; font-size: 0.85rem; margin: 0;">Warranty & maintenance</p>
+                    <div class="engagement_process_description">
+                        <div class="engagement_process_count">5</div>
+                        <h4>Support</h4>
+                        <p>Warranty & maintenance</p>
                     </div>
                 </div>
-            </div> -->
+            </div>
 
             <!-- Pricing & Warranty -->
-            <!-- <div style="margin-bottom: 60px;">
-                <h3 style="color: #2c4f68; margin-bottom: 25px; font-size: 1.8rem; text-align: center;">Pricing & Warranty</h3>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
-                    <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); border-top: 4px solid var(--primary);">
-                        <div style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 2rem;">💰</div>
-                        <h4 style="color: var(--bg-mid); margin-bottom: 15px; text-align: center; font-size: 1.2rem;">Competitive Pricing</h4>
-                        <p style="color: #666; text-align: center; line-height: 1.8;">Competitive pricing with OEM warranty on parts as per Siemens Innomotics policy.</p>
+            <div class="pricing_warranty">
+                <h3 class="pricing_warranty_title">Pricing & Warranty</h3>
+                <div class="pricing_warranty_content">
+                    <div class="pricing_warranty_description">
+                        <div class="pricing_warranty_icon">💰</div>
+                        <h4>Competitive Pricing</h4>
+                        <p>Competitive pricing with OEM warranty on parts as per Siemens Innomotics policy.</p>
                     </div>
-                    <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); border-top: 4px solid var(--primary);">
-                        <div style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 2rem;">🤝</div>
-                        <h4 style="color: var(--bg-mid); margin-bottom: 15px; text-align: center; font-size: 1.2rem;">Flexible Payment Terms</h4>
-                        <p style="color: #666; text-align: center; line-height: 1.8;">Flexible payment terms for project orders — discuss on inquiry.</p>
+                    <div class="pricing_warranty_description">
+                        <div class="pricing_warranty_icon">🤝</div>
+                        <h4>Flexible Payment Terms</h4>
+                        <p>Flexible payment terms for project orders — discuss on inquiry.</p>
                     </div>
                 </div>
-            </div> -->
+            </div>
 
             <!-- Call to Action -->
-            <!-- <div style="text-align: center; background: linear-gradient(135deg, rgba(38,176,148,0.1), rgba(44,79,104,0.1)); padding: 50px 30px; border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.08);">
-                <h3 style="color: #2c4f68; margin-bottom: 15px; font-size: 2rem;">Ready to Get Started?</h3>
-                <p style="color: #555; font-size: 1.1rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">Contact us today for a customised proposal for Siemens Innomotics motors and drives. Whether it's a single motor replacement or a multi-site automation rollout across Mangalore, Udupi and Karwar — we deliver OEM quality with local speed.</p>
-                <a href="#contact-us-section" class="btn-primary" style="font-size: 1.1rem; padding: 18px 40px; display: inline-block; text-decoration: none;">Contact Us Today</a>
-            </div> -->
+            <div class="call_to_action">
+                <h3>Ready to Get Started?</h3>
+                <p>Contact us today for a customised proposal for Siemens Innomotics motors and drives. Whether it's a single motor replacement or a multi-site automation rollout across Mangalore, Udupi and Karwar — we deliver OEM quality with local speed.</p>
+                <a href="#contact-us-section" class="btn-primary">Contact Us Today</a>
+            </div>
         </div>
     </section>
     
