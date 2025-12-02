@@ -1024,7 +1024,7 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 7px 4px;
+            padding: 12px 6px; 
             box-shadow: 0 8px 24px rgba(25, 195, 139, 0.4);
             cursor: pointer;
             transition: all 0.3s ease;
@@ -1040,7 +1040,6 @@
         }
 
         .get-in-touch-sidebar.light-bg .get-in-touch-link span:last-child {
-            /* color: #a8cdfc; */
             filter: drop-shadow(0 0 6px #a8cdfc);
         }
 
@@ -1064,29 +1063,41 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 4px;
+            gap: 0px;
             text-decoration: none;
             color: #fff;
             font-family: 'Poppins', sans-serif;
-            font-weight: 800;
-            font-size: 0.4rem;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.6rem;
+            letter-spacing: 0;
             line-height: 1;
             text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-            padding: 4px 0;
+            padding: 8px 4px;
             user-select: none;
         }
 
         .get-in-touch-link span {
-            line-height: 1;
+            line-height: 0.9; 
+            transform: rotate(90deg);
+            white-space: nowrap;
+            margin: 0;
+        }
+
+        /* Space spans - increase margin for word separation */
+        .get-in-touch-link span:empty,
+        .get-in-touch-link span:nth-child(4),
+        .get-in-touch-link span:nth-child(5),
+        .get-in-touch-link span:nth-child(8),
+        .get-in-touch-link span:nth-child(9) {
+            margin: 2px 0;  /* More space between words */
         }
 
         .get-in-touch-link span:last-child {
-            margin-top: 4px;
+            margin-top: 8px;
             font-size: 1.1rem;
-            /* color: #19c38b; */
             filter: drop-shadow(0 0 6px rgba(25, 195, 139, 0.8));
+            transform: rotate(0deg);
+            white-space: nowrap;
         }
 
         .get-in-touch-sidebar:hover .get-in-touch-link span:last-child {
@@ -1102,31 +1113,33 @@
         @media (max-width: 1024px) {
             .get-in-touch-sidebar {
                 right: 1px;
-                padding: 6px 3px;
+                padding: 10px 5px; 
                 border-radius: 26px;
             }
             .get-in-touch-link {
-                font-size: 0.4rem;
-                letter-spacing: 0.18em;
+                font-size: 0.55rem;
+                padding: 6px 3px; 
             }
             .get-in-touch-link span:last-child {
                 font-size: 1rem;
+                margin-top: 6px;
             }
         }
 
         @media (max-width: 600px) {
             .get-in-touch-sidebar {
                 right: 2px;
-                padding: 5px 2px;
+                padding: 8px 4px; 
                 border-radius: 22px;
                 box-shadow: 0 6px 16px rgba(25, 195, 139, 0.3);
             }
             .get-in-touch-link {
-                font-size: 0.38rem;
-                letter-spacing: 0.15em;
+                font-size: 0.5rem;
+                padding: 5px 2px; 
             }
             .get-in-touch-link span:last-child {
                 font-size: 0.9rem;
+                margin-top: 5px;
             }
         }
 
@@ -1430,19 +1443,17 @@
             <span>G</span>
             <span>e</span>
             <span>t</span>
-            <span> </span>
-            <span> </span>
+            <span></span>
+            <span></span>
             <span>I</span>
             <span>n</span>
-            <span> </span>
-            <span> </span>
+            <span></span>
+            <span></span>
             <span>T</span>
             <span>o</span>
             <span>u</span>
             <span>c</span>
             <span>h</span>
-            <span> </span>
-            <span> </span>
             <span>↓</span>
         </a>
     </div>
@@ -1451,8 +1462,8 @@
     <!-- Mobile Menu -->
     <nav class="mobile-menu" id="mobileMenu">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
             <li><a href="#">Product Range</a></li>
             <li><a href="#">Products</a></li>
             <li><a href="#">Contact Us</a></li>
@@ -1481,8 +1492,8 @@
                 <span class="company-name">CUREIFYINN</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
                 <li><a href="#">Product Range</a></li>
                 <li><a href="#">Products</a></li>
                 <li><a href="#">Contact Us</a></li>
@@ -1520,7 +1531,7 @@
                     <h3 style="color: #2c4f68; margin-bottom: 20px;">Company Overview</h3>
                     <p>Cureifyinn LLP is an authorized dealer for <strong>Siemens Innomotics</strong> products serving Karnataka and Northern Kerala regions (Bangalore, Mangalore, Udupi, Karwar, Mysore, Kannur, Kasaragod). We deliver industrial motors, drives and motion solutions tailored to manufacturing, process industries, marine, water & wastewater, and infrastructure projects.</p>
                     <p>Our focus is on reliable supply, fast local support, and engineering-led solutions that reduce downtime and improve energy efficiency across all our service locations.</p>
-                    <a href="#" class="btn-primary" style="margin-top: 20px;">Read More</a>
+                    <a href="about.html" class="btn-primary" style="margin-top: 20px;">Read More</a>
                 </div>
                 <div class="about-image">
                     <div class="about-stats">
@@ -1754,8 +1765,8 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="#">Product Range</a></li>
                     <li><a href="#">Products</a></li>
                     <li><a href="#">Contact Us</a></li>
