@@ -690,7 +690,7 @@
             margin: 0;
         }
 
-        .industries {
+        /* .industries {
             margin-bottom: 60px;
         }
         
@@ -745,6 +745,87 @@
         .industries-content span:hover {
             transform: translateY(-6px) scale(1.02);
             box-shadow: 0 16px 35px rgba(0,0,0,0.25);
+        } */
+
+        .industries {
+            margin-bottom: 80px;
+        }
+
+        .industries-grid {
+            display: grid;
+            /* grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); */
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin-top: 40px;
+        }
+
+        .industry-card {
+            background: white;
+            border-radius: 16px;
+            padding: 7px 5px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid transparent;
+        }
+
+        .industry-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--bg-mid));
+            transform: scaleX(0);
+            transition: transform 0.35s ease;
+        }
+
+        .industry-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 16px 40px rgba(38,176,148,0.2);
+        }
+
+        .industry-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .industry-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, rgba(38,176,148,0.1), rgba(44,79,104,0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            transition: all 0.35s ease;
+        }
+
+        .industry-card:hover .industry-icon {
+            background: linear-gradient(135deg, var(--primary), var(--bg-mid));
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .industry-card:hover .industry-icon::before {
+            filter: brightness(0) invert(1);
+        }
+
+        .industry-card h3 {
+            color: var(--bg-mid);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .industry-card p {
+            color: #666;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin: 0;
         }
 
         .competitive_advantages {
@@ -1573,7 +1654,21 @@
             .product-categories {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
-            .industries-content {
+
+            .areas-grid {
+                gap: 12px;
+            }
+            
+            .area-card {
+                padding: 10px 20px;
+                min-width: 120px;
+            }
+            
+            .area-card h3 {
+                font-size: 0.95rem;
+            }
+
+            /* .industries-content {
                 gap: 12px;
             }
             
@@ -1581,6 +1676,26 @@
                 padding: 10px 20px;
                 min-width: 120px;
                 font-size: 0.95rem;
+            } */
+
+            .industries-grid {
+                grid-template-columns: repeat(4, 1fr);                
+                gap: 20px;
+            }
+
+            .industry-card {
+                padding: 10px 8px;
+            }
+
+            .industry-icon {
+                width: 50px;
+                height: 50px;
+                margin: 0 auto 15px;
+                font-size: 2.0rem;
+            }
+
+            .industry-card h3 {
+                font-size: 1.0rem;
             }
 
             .top-bar .container {
@@ -1655,13 +1770,46 @@
                 gap: 20px;
             }
 
-            .industries-content {
+            .areas-grid {
+                gap: 10px;
+            }
+            
+            .area-card {
+                padding: 8px 18px;
+                min-width: 110px;
+            }
+            
+            .area-card h3 {
+                font-size: 0.9rem;
+            }
+
+            /* .industries-content {
                 gap: 10px;
             }
             
             .industries-content span {
                 padding: 8px 18px;
                 min-width: 110px;
+                font-size: 0.9rem;
+            } */
+
+            .industries-grid {
+                grid-template-columns: repeat(4, 1fr);                
+                gap: 20px;
+            }
+
+            .industry-card {
+                padding: 5px 4px;
+            }
+
+            .industry-icon {
+                width: 50px;
+                height: 50px;
+                margin: 0 auto 15px;
+                font-size: 1.5rem;
+            }
+
+            .industry-card h3 {
                 font-size: 0.9rem;
             }
 
@@ -1801,6 +1949,15 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
+
+            .industries-grid {
+                grid-template-columns: repeat(3, 1fr);                
+                gap: 20px;
+            }
+
+            .industry-card h3 {
+                font-size: 0.9rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1839,7 +1996,20 @@
                 padding: 18px 12px;
             }
 
-            .industries-content {
+            .areas-grid {
+                gap: 8px;
+            }
+            
+            .area-card {
+                padding: 8px 16px;
+                min-width: 100px;
+            }
+            
+            .area-card h3 {
+                font-size: 0.85rem;
+            }
+
+            /* .industries-content {
                 gap: 8px;
             }
             
@@ -1847,6 +2017,26 @@
                 padding: 4px 8px;
                 min-width: 135px;
                 font-size: 0.85rem;
+            } */
+
+            .industries-grid {
+                grid-template-columns: repeat(2, 1fr);                
+                gap: 20px;
+            }
+
+            .industry-card {
+                padding: 5px 4px;
+            }
+
+            .industry-icon {
+                width: 50px;
+                height: 50px;
+                margin: 0 auto 15px;
+                font-size: 1.5rem;
+            }
+
+            .industry-card h3 {
+                font-size: 0.9rem;
             }
             
             .footer-content {
@@ -2005,7 +2195,7 @@
                 <div class="about-image">
                     <div class="about-stats">
                         <div class="stat-box">
-                            <div class="stat-number">3</div>
+                            <div class="stat-number">7+</div>
                             <div class="stat-label">Service Locations</div>
                         </div>
                         <div class="stat-box">
@@ -2102,30 +2292,47 @@
             </div>
 
             <!-- Geographic Coverage -->
-            <div class="geographic-coverage">
-                <h3 class="geographic-coverage-title">Geographic Coverage & Local Presence</h3>
-                <div class="geographic-coverage-content">
-                    <div class="geographic-coverage-description">
-                        <div class="geographic-coverage-icon">🏢</div>
-                        <h4>Udupi</h4>
-                        <p>Head Office & Service Hub<br>Main operations & support</p>
-                    </div>
-                    <div class="geographic-coverage-description">
-                        <div class="geographic-coverage-icon">🛠️</div>
-                        <h4>Mangalore</h4>
-                        <p>Sales & Field Support<br>On-site technical support</p>
-                    </div>
-                    <div class="geographic-coverage-description">
-                        <div class="geographic-coverage-icon">⚓</div>
-                        <h4>Karwar</h4>
-                        <p>Sales & Field Support<br>Marine & port coverage</p>
+            <div class="geographic-coverage service-areas">
+                <div class="container">
+                    <h3 class="geographic-coverage-title">Geographic Coverage & Local Presence</h3>
+                    <p class="section-subtitle">
+                        Comprehensive coverage across Karnataka and Northern Kerala with strategic locations for rapid response, technical support and project execution for industrial motor solutions.
+                    </p>
+                    <div class="areas-grid">
+                        <div class="area-card">
+                            <h3>Bangalore</h3>
+                            <!-- <p>Industrial Hub & Technical Center<br>Complete engineering support, motor selection, drive system design and commissioning for manufacturing and IT industries.</p> -->
+                        </div>
+                        <div class="area-card">
+                            <h3>Mangalore</h3>
+                            <!-- <p>Port & Marine Operations<br>Specialized marine motor solutions, port equipment drives and coastal industrial applications with 24/7 emergency support.</p> -->
+                        </div>
+                        <div class="area-card">
+                            <h3>Udupi</h3>
+                            <!-- <p>Head Office & Service Hub<br>Main administrative office, inventory management, customer support and regional coordination center.</p> -->
+                        </div>
+                        <div class="area-card">
+                            <h3>Karwar</h3>
+                            <!-- <p>Naval & Marine Support<br>Specialized solutions for shipbuilding, naval applications and heavy marine equipment with certified marine motor expertise.</p> -->
+                        </div>
+                        <div class="area-card">
+                            <h3>Mysore</h3>
+                            <!-- <p>Industrial Manufacturing Zone<br>Process industry solutions, textile machinery motors, food processing drives and precision engineering support.</p> -->
+                        </div>
+                        <div class="area-card">
+                            <h3>Kannur</h3>
+                            <!-- <p>Northern Kerala Operations<br>Cashew processing, coir industry motors, agricultural processing solutions and regional industrial support.</p> -->
+                        </div>
+                        <div class="area-card">
+                            <h3>Kasaragod</h3>
+                            <!-- <p>Southern Coverage Extension<br>Border region support for coastal industries, fisheries equipment and small to medium industrial applications.</p> -->
+                        </div>
                     </div>
                 </div>
-                <p>Complete coverage across the coastal belt for rapid response and project execution.</p>
             </div>
 
             <!-- Industries We Serve -->
-            <div class="industries">
+            <!-- <div class="industries">
                 <h3 class="industries-title">Industries We Serve</h3>
                 <div class="industries-content">
                     <span>Marine & Ports</span>
@@ -2135,6 +2342,50 @@
                     <span>Chemical & Pharmaceuticals</span>
                     <span>Textiles & Paper</span>
                     <span>Manufacturing (SME)</span>
+                </div>
+            </div> -->
+
+            <div class="industries">
+                <h3 class="section-title">Industries We Serve</h3>
+                <p class="section-subtitle">
+                    Delivering specialized motor and drive solutions across diverse industrial sectors with proven expertise and reliable performance.
+                </p>
+                <div class="industries-grid">
+                    <div class="industry-card">
+                        <div class="industry-icon">⚓</div>
+                        <h3>Marine & Ports</h3>
+                        <!-- <p>Ship propulsion systems, port cranes, cargo handling equipment and marine-grade motor solutions.</p> -->
+                    </div>
+                    <div class="industry-card">
+                        <div class="industry-icon">💧</div>
+                        <h3>Water & Wastewater Treatment</h3>
+                        <!-- <p>Pumping systems, treatment plant motors, water distribution and sewage management solutions.</p> -->
+                    </div>
+                    <div class="industry-card">
+                        <div class="industry-icon">🍽️</div>
+                        <h3>Food & Beverage</h3>
+                        <!-- <p>Food processing equipment, packaging machinery, refrigeration systems and hygiene-compliant motors.</p> -->
+                    </div>
+                    <div class="industry-card">
+                        <div class="industry-icon">🏗️</div>
+                        <h3>Cement & Building Materials</h3>
+                        <!-- <p>Crushers, conveyors, rotary kilns, grinding mills and heavy-duty industrial motor applications.</p> -->
+                    </div>
+                    <div class="industry-card">
+                        <div class="industry-icon">⚗️</div>
+                        <h3>Chemical & Pharmaceuticals</h3>
+                        <!-- <p>Process pumps, mixers, reactors, clean-room motors and explosion-proof drive systems.</p> -->
+                    </div>
+                    <div class="industry-card">
+                        <div class="industry-icon">🧵</div>
+                        <h3>Textiles & Paper</h3>
+                        <!-- <p>Spinning machinery, weaving looms, paper mills, printing presses and precision motion control.</p> -->
+                    </div>
+                    <div class="industry-card">
+                        <div class="industry-icon">⚙️</div>
+                        <h3>Small & Medium Scale Manufacturing</h3>
+                        <!-- <p>General machinery, production lines, material handling and custom automation solutions for small to medium enterprises.</p> -->
+                    </div>
                 </div>
             </div>
 
@@ -2151,8 +2402,8 @@
                         <p>Strategically located with skilled engineers for rapid support</p>
                     </div>
                     <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; border-left: 4px solid var(--primary);">
-                        <h4>🌊 Coastal Expertise</h4>
-                        <p>Material selection for salt-laden, humid environments</p>
+                        <h4>🌊 Coastal Environment Expertise </h4>
+                        <p>Material selection and protective measures for salt-laden, humid conditions</p>
                     </div>
                     <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; border-left: 4px solid var(--primary);">
                         <h4>📋 Transparent Process</h4>
@@ -2167,28 +2418,28 @@
                 <div class="engagement_process_content">
                     <div class="engagement_process_description">
                         <div class="engagement_process_count">1</div>
-                        <h4>Inquiry & Survey</h4>
-                        <p>Free consultation</p>
+                        <h4>Inquiry & Site Survey</h4>
+                        <p>Free initial consultation & survey</p>
                     </div>
                     <div class="engagement_process_description">
                         <div class="engagement_process_count">2</div>
-                        <h4>Proposal</h4>
-                        <p>Technical & commercial</p>
+                        <h4>Proposal & Quotation</h4>
+                        <p>Detailed technical & commercial proposal with lead-time & warranty terms</p>
                     </div>
                     <div class="engagement_process_description">
                         <div class="engagement_process_count">3</div>
                         <h4>Delivery</h4>
-                        <p>OEM-sourced parts</p>
+                        <p>OEM-sourced parts, inspection before dispatch, tracked delivery</p>
                     </div>
                     <div class="engagement_process_description">
                         <div class="engagement_process_count">4</div>
                         <h4>Installation</h4>
-                        <p>Certified engineers</p>
+                        <p>Performed by certified engineers; FAT/SAT where required</p>
                     </div>
                     <div class="engagement_process_description">
                         <div class="engagement_process_count">5</div>
                         <h4>Support</h4>
-                        <p>Warranty & maintenance</p>
+                        <p>Warranty, preventive maintenance plans, & spare-parts availability</p>
                     </div>
                 </div>
             </div>
