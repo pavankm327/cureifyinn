@@ -564,12 +564,12 @@
         }
 
         .category-card::before {
-            /* content: '';
+            content: '';
             position: absolute;
             inset: 0;
             background: radial-gradient(circle at 0 0, rgba(38,176,148,0.12) 0, transparent 55%);
             opacity: 0;
-            transition: opacity 0.35s; */
+            transition: opacity 0.35s;
         }
 
         .category-card:hover {
@@ -619,13 +619,11 @@
             gap: 6px;
             font-size: 0.95rem;
             transition: gap 0.3s, color 0.3s;
-            z-index: 1000;
         }
 
         .learn-more:hover {
             gap: 10px;
             color: var(--primary-dark);
-            transform: scale(1.05);
         }
 
         /* Featured Products Section - Responsive with proper icons */
@@ -1431,6 +1429,482 @@
             }
         }
     </style>
+    <style>
+   /* ========================================
+   PRODUCT RANGE HERO SECTION
+   ======================================== */
+
+.product-range-hero {
+    background: linear-gradient(135deg, #f8f9fb 0%, #ffffff 100%);
+}
+
+.product-range-content {
+    animation: fadeUp 0.8s ease-out both;
+}
+
+.product-range-image {
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+.product-range-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin-top: -10%;
+}
+
+/* ========================================
+   PRODUCT RANGE DETAILS SECTION
+   ======================================== */
+
+.product-range-details {
+    padding: 60px 20px;
+    background: #ffffff;
+}
+
+.range-header {
+    max-width: 1000px;
+    margin: 0 auto 50px;
+    text-align: center;
+    animation: fadeUp 0.8s ease-out both;
+}
+
+.range-header h2 {
+    font-size: 2.5rem;
+    color: #1a3a4d; /* --bg-dark */
+    margin-bottom: 25px;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.range-intro {
+    font-size: 1.05rem;
+    color: #333333; /* --text-main */
+    line-height: 1.8;
+    text-align: justify;
+    margin: 0 auto;
+}
+
+.portfolio-section {
+    max-width: 1000px;
+    margin: 60px auto 0;
+    padding-top: 50px;
+    border-top: 2px solid #e0e0e0;
+    animation: fadeUp 0.9s ease-out both;
+    animation-delay: 0.2s;
+}
+
+.portfolio-section h3 {
+    font-size: 2rem;
+    color: #2c4f68; /* --bg-mid */
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.portfolio-intro {
+    font-size: 1rem;
+    color: #666666; /* --text-muted */
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin: 2.5rem 0;
+}
+
+.portfolio-item {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(38,176,148,0.2);
+    border-color: var(--primary);
+}
+
+.portfolio-item:hover::before {
+    transform: scaleX(1);
+}
+
+.portfolio-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 2rem;
+    color: white;
+    box-shadow: 0 10px 25px rgba(38,176,148,0.3);
+}
+
+.portfolio-item h4 {
+    color: var(--bg-mid);
+    margin: 0 0 0.75rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.portfolio-item p {
+    color: var(--text-muted);
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.portfolio-features {
+    text-align: center;
+    max-width: 800px;
+    margin: 2rem auto 0;
+    color: var(--text-muted);
+    font-size: 1rem;
+    padding: 1.5rem;
+    background: rgba(38,176,148,0.05);
+    border-radius: 12px;
+    border-left: 4px solid var(--primary);
+}
+
+/* ========================================
+   RESPONSIVE STYLES
+   ======================================== */
+
+/* Tablets and Medium Screens */
+@media (max-width: 1024px) {
+    .range-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .range-intro,
+    .portfolio-intro {
+        font-size: 1rem;
+    }
+
+    .portfolio-section h3 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Mobile and Small Screens */
+@media (max-width: 768px) {
+    .product-range-details {
+        padding: 40px 15px;
+    }
+
+    .range-header {
+        margin-bottom: 40px;
+    }
+
+    .range-header h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .range-intro,
+    .portfolio-intro {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
+    .portfolio-section {
+        margin-top: 40px;
+        padding-top: 35px;
+    }
+
+    .portfolio-section h3 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .portfolio-item {
+        padding: 1.5rem;
+    }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+    .product-range-details {
+        padding: 30px 12px;
+    }
+
+    .range-header {
+        margin-bottom: 30px;
+    }
+
+    .range-header h2 {
+        font-size: 1.5rem;
+        line-height: 1.4;
+        margin-bottom: 18px;
+    }
+
+    .range-intro,
+    .portfolio-intro {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .portfolio-section {
+        margin-top: 30px;
+        padding-top: 30px;
+    }
+
+    .portfolio-section h3 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+}
+
+
+/* Header Enhancements */
+.header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 15px rgba(38,176,148,0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+.range-header h2 span {
+    color: var(--primary);
+    font-weight: 800;
+}
+
+/* Stats Row */
+.portfolio-overview {
+    margin: 40px auto;
+    max-width: 1000px;
+}
+
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(38,176,148,0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.stat-card:hover::before {
+    opacity: 1;
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.95;
+    letter-spacing: 1px;
+}
+
+/* Feature Highlights */
+.portfolio-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.feature-highlight {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(38,176,148,0.06);
+    border-radius: 14px;
+    border-left: 4px solid var(--primary);
+    transition: all 0.3s ease;
+}
+
+.feature-highlight:hover {
+    background: rgba(38,176,148,0.12);
+    transform: translateX(8px);
+}
+
+.feature-icon {
+    font-size: 1.8rem;
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.feature-highlight h5 {
+    margin: 0 0 8px;
+    color: var(--bg-mid);
+    font-size: 1.1rem;
+}
+
+/* Enhanced Portfolio Grid */
+.portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.spec-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.tag {
+    padding: 4px 12px;
+    background: rgba(38,176,148,0.15);
+    color: var(--primary);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tag.power { border: 1px solid var(--primary); }
+.tag.eff { background: rgba(255,193,7,0.2); color: #f39c12; }
+.tag.prot { background: rgba(52,152,219,0.2); color: #3498db; }
+
+.portfolio-item.featured {
+    border-top: 4px solid var(--primary);
+}
+
+.portfolio-item.premium {
+    background: linear-gradient(135deg, #fff8e1 0%, #fff3cd 100%);
+}
+
+/* Support Matrix */
+.support-matrix {
+    margin-top: 4rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.location-badge {
+    background: var(--primary);
+    color: white;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.matrix-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-left: 4px solid var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .portfolio-features-grid { grid-template-columns: 1fr; }
+    .matrix-grid { grid-template-columns: repeat(2, 1fr); }
+}
+/* ========================================
+   REQUIRED ANIMATIONS (if not already present)
+   ======================================== */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   REQUIRED CSS VARIABLES (if not already present)
+   ======================================== */
+
+:root {
+    --primary: #26b094;
+    --primary-dark: #1f8f78;
+}
+    </style>
 </head>
 <body>
     <!-- Mobile Menu Overlay -->
@@ -1509,89 +1983,160 @@
         </div>
     </nav>
 
-    <!-- Hero Banner -->
-    <section class="hero-banner">
-        <img src="assets/background/innomotics-product-family-neutral-visual.jpg" 
-            alt="Siemens Innomotics Product Family" 
-            class="hero-banner-image"
-            fetchpriority="high"
-            width="1920"
-            height="1080">
-        <div class="hero-content">
-            <!-- content here -->
-        </div>
-    </section>
-
-    <!-- Product Range Section -->
-    <section class="section product-range-section">
-        <div class="container">
-            <h2 class="section-title">Product Range</h2>
-            <p class="product-range-intro">
-                Comprehensive Siemens Innomotics portfolio for motors, drives and motion solutions, tailored for marine, industrial and infrastructure applications across Karnataka and Northern Kerala.
-            </p>
-            <div class="product-categories">
-                <!-- Row 1 -->
-                <div class="category-card">
-                    <div class="category-icon">⚙️</div>
-                    <h3>Low Voltage Motors</h3>
-                    <p>Synchronous and asynchronous motors with IE3/IE4 efficiency classes for diverse industrial applications across Bangalore, Mangalore and Udupi.</p>
-                    <a href="product-range-details.html" class="learn-more">Learn More →</a>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">⚡</div>
-                    <h3>High Voltage Motors</h3>
-                    <p>High-performance motors for heavy industrial applications in manufacturing plants and power generation facilities.</p>
-                    <a href="product-range-details.html" class="learn-more">Learn More →</a>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">🔧</div>
-                    <h3>AboveNEMA Motors</h3>
-                    <p>Specialized motors exceeding NEMA standards for demanding applications in marine and coastal environments.</p>
-                    <a href="product-range-details.html" class="learn-more">Learn More →</a>
-                </div>
-
-                <!-- Row 2 -->
-                <div class="category-card">
-                    <div class="category-icon">🚢</div>
-                    <h3>Medium Voltage Drives</h3>
-                    <p>Advanced drive systems for precise motor control in marine applications and port operations in Karwar and Mangalore.</p>
-                    <a href="product-range-details.html" class="learn-more">Learn More →</a>
-                </div>
-                <!-- <div class="category-card">
-                    <div class="category-icon">💧</div>
-                    <h3>Digitalization</h3>
-                    <p>Smart motor monitoring and IoT solutions for water treatment plants and industrial automation in Mysore and Bangalore.</p>
-                    <a href="product-range-details.html" class="learn-more">Learn More →</a>
-                </div> -->
-                <div class="category-card">
-                    <div class="category-icon">🏭</div>
-                    <h3>Geared Motors</h3>
-                    <p>Integrated motor-gearbox solutions for conveyor systems, mixers and heavy machinery in process industries.</p>
-                    <a href="product-range-details.html" class="learn-more">Learn More →</a>
-                </div>
-
-                <!-- Row 3 -->
-                <div class="category-card">
-                    <div class="category-icon">🧩</div>
-                    <h3>Generators</h3>
-                    <p>Reliable power generation solutions for backup systems and prime power applications across all service locations.</p>
-                    <a href="product-range-details.html" class="learn-more">Learn More →</a>
-                </div>
-                <!-- <div class="category-card">
-                    <div class="category-icon">🛠️</div>
-                    <h3>Integrate Shield</h3>
-                    <p>Advanced protection systems and integrated solutions for harsh industrial environments and coastal applications.</p>
-                    <a href="product-range-details.html" class="learn-more">Learn More →</a>
-                </div> -->
-                <div class="category-card">
-                    <div class="category-icon">📦</div>
-                    <h3>Motors Spindles</h3>
-                    <p>High-precision spindle motors for CNC machines and manufacturing applications in Bangalore and Mysore.</p>
-                    <a href="product-range-details.html" class="learn-more">Learn More →</a>
-                </div>
+    <!-- Product Range Hero Section -->
+    <section class="product-range-hero">
+        <div class="product-range-content">
+            <div class="product-range-image">
+                <img src="assets/background/innomotics-product-family-neutral-visual.jpg" alt="Siemens Innomotics Product Family" />
             </div>
         </div>
     </section>
+
+    <!-- Product Categories Overview -->
+<section class="product-range-details">
+    <div class="container">
+        <div class="range-header">
+            <div class="header-badge">🌍 Global Leader in LV Motors</div>
+            <h2>Innomotics Low Voltage Motors<br><span>Line & Converter Operation</span></h2>
+            <p class="range-intro">Innomotics sets the global standard with three-phase motors spanning <strong>0.09–5,300 kW</strong>. Optimized for direct mains or VFD operation, these motors deliver <strong>IE3/IE4/IE5 efficiency</strong> across 1,000+ frame sizes and 50+ mounting variants for every industrial need.</p>
+        </div>
+
+        <div class="portfolio-overview">
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-number">5,300 kW</div>
+                    <div class="stat-label">Max Power</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">IE5</div>
+                    <div class="stat-label">Top Efficiency</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1,000+</div>
+                    <div class="stat-label">Frame Sizes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Mounting Types</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-section">
+            <h3>Complete Low Voltage Portfolio</h3>
+            
+            <div class="portfolio-features-grid">
+                <div class="feature-highlight">
+                    <span class="feature-icon">⚡</span>
+                    <div>
+                        <h5>Full IEC Compliance</h5>
+                        <p>EN/IEC 60034 standards • IP55–IP68 protection • ATEX/IECEx certified</p>
+                    </div>
+                </div>
+                <div class="feature-highlight">
+                    <span class="feature-icon">🔧</span>
+                    <div>
+                        <h5>Custom Solutions</h5>
+                        <p>Marine coatings • Food-safe • Brake motors • Encoder feedback</p>
+                    </div>
+                </div>
+                <div class="feature-highlight">
+                    <span class="feature-icon">📈</span>
+                    <div>
+                        <h5>Proven Reliability</h5>
+                        <p>5+ million units/year • 98.7% uptime • 24/7 local support</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item featured" data-type="gp">
+                    <div class="portfolio-icon">🏭</div>
+                    <h4>SIMOTICS GP</h4>
+                    <div class="spec-tags">
+                        <span class="tag power">0.09–200 kW</span>
+                        <span class="tag eff">IE3/IE4</span>
+                        <span class="tag duty">S1/S3</span>
+                    </div>
+                    <p><strong>General Purpose</strong> • Pumps • Fans • Compressors • Conveyors</p>
+                </div>
+
+                <div class="portfolio-item featured" data-type="sd">
+                    <div class="portfolio-icon">⚙️</div>
+                    <h4>SIMOTICS SD</h4>
+                    <div class="spec-tags">
+                        <span class="tag power">0.12–315 kW</span>
+                        <span class="tag prot">IP66</span>
+                        <span class="tag duty">Severe Duty</span>
+                    </div>
+                    <p><strong>Heavy Duty</strong> • Mining • Chemical • Marine • Cement</p>
+                </div>
+
+                <div class="portfolio-item featured" data-type="xp">
+                    <div class="portfolio-icon">🌊</div>
+                    <h4>SIMOTICS XP</h4>
+                    <div class="spec-tags">
+                        <span class="tag power">0.09–1,000 kW</span>
+                        <span class="tag cert">ATEX</span>
+                        <span class="tag duty">Hazardous</span>
+                    </div>
+                    <p><strong>Explosion Proof</strong> • Oil & Gas • Petrochem • Refineries</p>
+                </div>
+
+                <div class="portfolio-item" data-type="drive">
+                    <div class="portfolio-icon">⚡</div>
+                    <h4>SINAMICS G120C</h4>
+                    <div class="spec-tags">
+                        <span class="tag power">0.37–132 kW</span>
+                        <span class="tag type">VFD</span>
+                        <span class="tag size">Compact</span>
+                    </div>
+                    <p>Variable speed control • HVAC • Water • Textiles [file:1]</p>
+                </div>
+
+                <div class="portfolio-item" data-type="servo">
+                    <div class="portfolio-icon">🔧</div>
+                    <h4>SIMOTICS S-1FK7</h4>
+                    <div class="spec-tags">
+                        <span class="tag power">0.09–500 kW</span>
+                        <span class="tag resp">High Dynamic</span>
+                    </div>
+                    <p>Precision servo • Robotics • CNC • Packaging [file:1]</p>
+                </div>
+
+                <div class="portfolio-item premium" data-type="premium">
+                    <div class="portfolio-icon">📊</div>
+                    <h4>IE4/IE5 Premium</h4>
+                    <div class="spec-tags">
+                        <span class="tag power">Up to 5 MW</span>
+                        <span class="tag eff">Super Premium</span>
+                    </div>
+                    <p>Energy-optimized • Green manufacturing • Cost savings [file:1]</p>
+                </div>
+            </div>
+
+            <div class="support-matrix">
+                <h4>Local Support Matrix <span class="location-badge">Karnataka • Kerala</span></h4>
+                <div class="matrix-grid">
+                    <div class="matrix-item">
+                        <strong>24/7</strong> Spare Parts
+                    </div>
+                    <div class="matrix-item">
+                        <strong>48H</strong> Commissioning
+                    </div>
+                    <div class="matrix-item">
+                        <strong>99.9%</strong> Uptime Guarantee
+                    </div>
+                    <div class="matrix-item">
+                        <strong>Free</strong> Energy Audit
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
     
     <!-- Featured Products -->
     <section id="products">
