@@ -1110,24 +1110,6 @@
             }
         }
 
-        @media (max-width: 600px) {
-            .get-in-touch-sidebar {
-                right: 2px;
-                padding: 8px 4px; 
-                border-radius: 22px;
-                box-shadow: 0 6px 16px rgba(25, 195, 139, 0.3);
-            }
-            .get-in-touch-link {
-                font-size: 0.5rem;
-                padding: 5px 2px; 
-            }
-            .get-in-touch-link span:last-child {
-                font-size: 0.9rem;
-                margin-top: 5px;
-            }
-        }
-
-
         /* Responsive Design */
         @media (max-width: 1024px) {
             .product-categories {
@@ -1138,16 +1120,6 @@
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
                 /* grid-template-columns: repeat(5, 1fr); */
                 gap: 1.2rem;
-            }
-        }
-
-        @media (max-width: 822px) {
-            .top-bar .container {
-                display: block;
-            }
-
-            .contact-info {
-                display: none;
             }
         }
 
@@ -1180,6 +1152,16 @@
                 margin-right: 0;
                 margin-bottom: 5px;
                 /* display: block; */
+            }
+        }
+
+        @media (max-width: 822px) {
+            .top-bar .container {
+                display: block;
+            }
+
+            .contact-info {
+                display: none;
             }
         }
 
@@ -1300,9 +1282,28 @@
                 font-size: 0.9rem;
                 text-align: center;
             }
+
+            .contact-form form > div {
+                flex-direction: column !important;
+            }
+            
+            .contact-form input,
+            .contact-form textarea {
+                width: 100% !important;
+                flex: none !important;
+            }
+            
+            .contact-form input[type="text"],
+            .contact-form input[type="email"],
+            .contact-form input[type="number"],
+            .contact-form input[type="tel"],
+            .contact-form input:not([type]),
+            .contact-form textarea {
+                min-width: 0;
+            }
         }
 
-        @media screen and (max-width: 576px) {
+        @media (max-width: 576px) {
             .hero-banner {
                 min-height: 50vh;
                 padding: 30px 15px;
@@ -1377,32 +1378,7 @@
                 width: 100%;
                 text-align: center;
             }
-        }
 
-        /* Responsive Contact Form Inputs - Mobile First */
-        @media (max-width: 768px) {
-            .contact-form form > div {
-                flex-direction: column !important;
-            }
-            
-            .contact-form input,
-            .contact-form textarea {
-                width: 100% !important;
-                flex: none !important;
-            }
-            
-            .contact-form input[type="text"],
-            .contact-form input[type="email"],
-            .contact-form input[type="number"],
-            .contact-form input[type="tel"],
-            .contact-form input:not([type]),
-            .contact-form textarea {
-                min-width: 0;
-            }
-        }
-
-        /* Extra small screens - ensure no horizontal overflow */
-        @media (max-width: 480px) {
             .contact-form {
                 padding: 25px 20px;
             }
@@ -1513,7 +1489,7 @@
         .filter-sidebar {
             background: white;
             border-radius: 14px;
-            padding: 24px 20px;
+            padding: 15px 15px;
             box-shadow: 0 6px 24px rgba(0,0,0,0.1);
             height: fit-content;
             position: sticky;
@@ -1532,7 +1508,7 @@
 
         .filter-header h3 {
             color: var(--bg-mid);
-            font-size: 1.15rem;
+            font-size: 1.00rem;
             font-weight: 600;
         }
 
@@ -1571,7 +1547,7 @@
             align-items: center;
             gap: 10px;
             cursor: pointer;
-            padding: 10px 12px;
+            padding: 2px 12px;
             border-radius: 8px;
             transition: all 0.3s ease;
             position: relative;
@@ -1630,11 +1606,11 @@
         /* Compact Products Grid */
         .products-grid {
             display: grid;
-            gap: 24px;
+            gap: 10px;
         }
 
         .grid-view {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
         }
 
         .list-view {
@@ -1644,7 +1620,7 @@
         .product-card {
             background: white;
             border-radius: 16px;
-            padding: 24px 20px;
+            padding: 5px 15px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.08);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid #f8fafc;
@@ -1709,9 +1685,23 @@
         }
 
         .product-icon {
+            background: url('assets/products/product-1.jpg') center center / contain no-repeat;
+            position: relative;
+            min-height: 125px;
+            color: #f9fafb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* padding: 0px 20px 100px; */
+            /* overflow: hidden;
+            isolation: isolate; */
+        }
+        
+        /* .product-icon {
             width: 75px;
             height: 75px;
             background: linear-gradient(135deg, rgba(38,176,148,0.12), rgba(44,79,104,0.08));
+            background: url('assets/products/product-1.jpg') center center / contain no-repeat;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1720,17 +1710,17 @@
             font-size: 2.3rem;
             transition: all 0.3s ease;
             box-shadow: 0 6px 16px rgba(38,176,148,0.15);
-        }
+        } */
 
-        .product-card:hover .product-icon {
+        /* .product-card:hover .product-icon {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             transform: scale(1.1) rotate(6deg);
             box-shadow: 0 10px 24px rgba(38,176,148,0.35);
-        }
+        } */
 
         .product-card h3 {
             color: var(--bg-mid);
-            font-size: 1.18rem;
+            font-size: 0.9rem;
             font-weight: 600;
             margin-bottom: 16px;
             text-align: center;
@@ -1740,8 +1730,8 @@
         .product-specs {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 5px;
+            margin-bottom: 15px;
             flex: 1;
         }
 
@@ -1749,43 +1739,48 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 14px;
-            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-            border-radius: 10px;
+            /* padding: 10px 14px; */
+            /* background: linear-gradient(135deg, #f8fafc, #f1f5f9); */
+            /* border-radius: 10px; */
             font-size: 0.9rem;
-            border: 1px solid #e2e8f0;
+            /* border: 1px solid #e2e8f0; */
             transition: all 0.3s ease;
         }
 
-        .spec-item:hover {
+        /* .spec-item:hover {
             background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
             transform: translateX(3px);
-        }
+        } */
 
         .spec-label {
             color: #64748b;
             font-weight: 500;
+            font-size: 0.8rem;
+            text-align: start;
+            /* white-space: nowrap; */
         }
 
         .spec-value {
             color: var(--bg-mid);
-            font-weight: 700;
-            font-size: 0.92rem;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-align: end;
+            /* white-space: nowrap; */
         }
 
         .product-card button {
-            width: 100%;
-            padding: 14px;
+            width: 100px;
+            padding: 5px;
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
             border: none;
-            border-radius: 12px;
+            border-radius: 5px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-size: 0.95rem;
+            font-size: 0.8rem;
             font-family: inherit;
-            margin-top: auto;
+            margin: auto auto 15px auto;
         }
 
         .product-card button:hover {
@@ -1835,7 +1830,8 @@
             }
 
             .grid-view {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                /* grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); */
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
@@ -1890,7 +1886,8 @@
             }
 
             .grid-view {
-                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+                /* grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); */
+                grid-template-columns: repeat(3, 1fr)!important;
             }
 
             .page-title {
@@ -1910,18 +1907,39 @@
             }
         }
 
+        @media (max-width: 600px) {
+            .get-in-touch-sidebar {
+                right: 2px;
+                padding: 8px 4px; 
+                border-radius: 22px;
+                box-shadow: 0 6px 16px rgba(25, 195, 139, 0.3);
+            }
+            .get-in-touch-link {
+                font-size: 0.5rem;
+                padding: 5px 2px; 
+            }
+            .get-in-touch-link span:last-child {
+                font-size: 0.9rem;
+                margin-top: 5px;
+            }
+
+            .grid-view {
+                grid-template-columns: repeat(2, 1fr)!important;
+            }
+        }
+
         @media (max-width: 480px) {
             .grid-view {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr!important;
             }
 
             .page-title {
                 font-size: 1.7rem;
             }
 
-            .product-card {
-                padding: 20px 16px;
-            }
+            /* .product-card {
+                padding: 5px 15px;
+            } */
 
             .controls-container > div {
                 width: 100%;
@@ -2033,13 +2051,13 @@
                         <option value="nameDesc">Name: Z-A</option>
                     </select>
                 </div>
-                <div class="view-toggle-container">
+                <!-- <div class="view-toggle-container">
                     <label for="viewToggle" class="view-label">View as:</label>
                     <select id="viewToggle">
                         <option value="grid">Grid</option>
                         <option value="list">List</option>
                     </select>
-                </div>
+                </div> -->
             </div>
 
             <div class="products-layout">
@@ -2137,7 +2155,7 @@
                 <div class="products-container">
                     <div class="products-grid grid-view" id="productsGrid">
                         <div class="product-card" data-type="motor" data-voltage="low" data-efficiency="ie3" data-application="industrial" data-power="0.12">
-                            <div class="product-icon">🔄</div>
+                            <div class="product-icon"></div>
                             <h3>SIMOTICS GP Motor</h3>
                             <div class="product-specs">
                                 <div class="spec-item">
@@ -2157,7 +2175,7 @@
                         </div>
 
                         <div class="product-card" data-type="drive" data-voltage="low" data-efficiency="ie4" data-application="industrial" data-power="0.37">
-                            <div class="product-icon">⚙️</div>
+                            <div class="product-icon"></div>
                             <h3>SINAMICS G120</h3>
                             <div class="product-specs">
                                 <div class="spec-item">
@@ -2177,7 +2195,7 @@
                         </div>
 
                         <div class="product-card" data-type="motor" data-voltage="low" data-efficiency="ie3" data-application="industrial" data-power="0.09">
-                            <div class="product-icon">🛡️</div>
+                            <div class="product-icon"></div>
                             <h3>SIMOTICS SD Motor</h3>
                             <div class="product-specs">
                                 <div class="spec-item">
@@ -2197,7 +2215,7 @@
                         </div>
 
                         <div class="product-card" data-type="drive" data-voltage="low" data-efficiency="ie4" data-application="hvac" data-power="0.12">
-                            <div class="product-icon">📏</div>
+                            <div class="product-icon"></div>
                             <h3>SINAMICS V20</h3>
                             <div class="product-specs">
                                 <div class="spec-item">
@@ -2217,7 +2235,7 @@
                         </div>
 
                         <div class="product-card" data-type="motor" data-voltage="high" data-efficiency="ie3" data-application="industrial" data-power="315">
-                            <div class="product-icon">🔋</div>
+                            <div class="product-icon"></div>
                             <h3>SIMOTICS HV Motor</h3>
                             <div class="product-specs">
                                 <div class="spec-item">
@@ -2237,7 +2255,7 @@
                         </div>
 
                         <div class="product-card" data-type="motor" data-voltage="low" data-efficiency="ie4" data-application="marine" data-power="5">
-                            <div class="product-icon">🚢</div>
+                            <div class="product-icon"></div>
                             <h3>Marine Duty Motor</h3>
                             <div class="product-specs">
                                 <div class="spec-item">
@@ -2257,7 +2275,7 @@
                         </div>
 
                         <div class="product-card" data-type="gearmotor" data-voltage="low" data-efficiency="ie3" data-application="industrial" data-power="50">
-                            <div class="product-icon">⚡</div>
+                            <div class="product-icon"></div>
                             <h3>SIMOGEAR Geared Motor</h3>
                             <div class="product-specs">
                                 <div class="spec-item">
@@ -2277,7 +2295,7 @@
                         </div>
 
                         <div class="product-card" data-type="drive" data-voltage="medium" data-efficiency="ie4" data-application="industrial" data-power="0.55">
-                            <div class="product-icon">⚙️</div>
+                            <div class="product-icon"></div>
                             <h3>SINAMICS S120</h3>
                             <div class="product-specs">
                                 <div class="spec-item">
